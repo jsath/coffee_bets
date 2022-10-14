@@ -28,7 +28,7 @@ public class LoginController {
 		return "dashboard.jsp";
 	}
 
-	
+	// Hello sean
 	@GetMapping("/login")
 	public String login(@ModelAttribute User user, @ModelAttribute LoginUser loginUser) {
 		return "login.jsp";
