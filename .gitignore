@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/src/main/**/apiservice/
+
+
 src/main/resources/static/apiservice/testing.js
 
 ### STS ###
