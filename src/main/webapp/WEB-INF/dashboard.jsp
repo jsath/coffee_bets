@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -14,7 +13,7 @@
                 </head>
 
                 <body>
-                    <div class="main">
+                    <div class="main-box">
                         <div class="nav">
                             <div class="nav-title">
                                 <img src="/imgs/coffee_black_logo.png">
@@ -22,7 +21,7 @@
                             <div class="Coffee-Title">
                                 <h1> Coffee Bets</h1>
                             </div>
-                            <h1>    </h1>
+                            <h1> </h1>
                             <!-- <ul class="nav-links">
                                 <li><button class="btn">Settings</button></li>
                                 <li><button class="btn">Creators</button></li>
@@ -42,18 +41,11 @@
                                 <button class="btn">Log Out</button>
                             </div>
                             <div class="main-page">
-                                <div class="news">
-                                    <img src="/imgs/news.jpg">
-                                </div>
-                                <div class="scores">
-                                    <img src="/imgs/scores.jpg">
-                                </div>
+
+                                <rssapp-ticker id="0b6SDhsyDBvZ3sek"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                                <rssapp-wall id="0b6SDhsyDBvZ3sek"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
                         </div>
-                    </div>
                     </div>
                 </body>
 
                 </html>
-
-
-

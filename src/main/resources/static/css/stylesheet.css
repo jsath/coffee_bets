@@ -35,18 +35,21 @@
 .nav-title img{
     height:200px;
 }
-.main{
-    background: rgb(82,131,162);
+body{
+    /* background: rgb(82,131,162);
     background: linear-gradient(0deg, rgba(82,131,162,1) 0%, rgba(0,0,0,1) 70%);
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0%;
+    height:100vh; */
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 24%, rgba(82,131,162,1) 63%, rgba(2,0,36,1) 100%);
+}
+.main-box{
+    display: flex;
 }
 .holder{
 	background-color: black;
 }
 .nav{
+    display: flex;
     background-color: black;
     color: black;
     display:flex;
@@ -57,6 +60,7 @@
 
 }
 .nav-title{
+    display: flex;
     text-align: left;
     background-color: black;
     color: black;
@@ -108,21 +112,26 @@
     text-decoration: none;
 }
 .main-body{
+    display: flex;
     height: 100vh;
 }
 .main-page{
-    height: 100vh;
+
+    height: 100%;
     width: 100%;
+
 
 }
 .side-bar{
     display: flex;
-    margin-right: 20px;
     width: 150px;
     background-color: black;
-    height: 100vh;
     flex-direction: column;
     align-items: center;
+    /* position: fixed;
+    z-index: 2;
+    height: 100%; */
+
 
 
 
