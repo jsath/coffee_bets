@@ -8,6 +8,7 @@
 .main{
 	flex: 2;  
 	width: 100%; 
+    height: 100vh;
 }
 
 .holder{
@@ -122,6 +123,7 @@
     height: 100vh;
     flex-direction: column;
     align-items: center;
+
 
 
 }

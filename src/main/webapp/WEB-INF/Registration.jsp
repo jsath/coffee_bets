@@ -19,6 +19,32 @@
         </ul>
     </div>
 
+    <h1>Register</h1>
+
+<form:form action="/register" method="post" modelAttribute="user">
+
+        <form:label path="userName">Username: </form:label><br>
+        <form:input path="userName"/><br>
+        <form:errors path="userName" class="text-danger"/><br>
+        
+        <form:label path="email">Email: </form:label><br>
+        <form:input path="email"/><br>
+        <form:errors path="email" class="text-danger"/><br>
+        
+        <form:label path="password">Password: </form:label><br>
+        <form:input type="password" path="password"/><br>
+        <form:errors path="password" class="text-danger"/><br>
+        
+       	<form:label path="confirm">Confirm Password: </form:label><br>
+        <form:input type="password" path="confirm"/><br>
+        <form:errors path="confirm" class="text-danger"/><br>
+        
+       
+        <input type="submit" value="Register" class="btn btn-primary"/>
+
+</form:form>
+
+</div>
 </body>
 </html>
 
