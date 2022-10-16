@@ -12,7 +12,7 @@ public class StadiumController {
     
     @GetMapping("/patstest")
     public String pat() {
-        return "showallbets.jsp";
+        return "index.jsp";
     }
     @GetMapping("/jeffstest")
     public String jeff() {
