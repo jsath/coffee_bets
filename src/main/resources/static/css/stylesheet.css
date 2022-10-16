@@ -108,6 +108,7 @@
     text-decoration: none;
 }
 .main-body{
+    display: flex;
     height: 100vh;
 }
 .main-page{
