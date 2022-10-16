@@ -4,12 +4,18 @@ package com.project.cofeebets.models;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -19,6 +25,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+
+
     
 @Entity
 @Table(name="users")
@@ -45,11 +54,26 @@ public class User{
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
     
+    private int adminStatus = 0;
+    
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updatedAt;
+    
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="wallet_id")
+    private Wallet wallet; 
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "bets", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "game_id")
+    )
+    private List<Bet> bets;
   
     public User() {}
     
@@ -103,7 +127,14 @@ public class User{
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
+
+	public int getAdminStatus() {
+		return adminStatus;
+	}
+
+	public void setAdminStatus(int adminStatus) {
+		this.adminStatus = adminStatus;
+	}
     
-    // TODO - Don't forget to generate getters and setters
   
 }
