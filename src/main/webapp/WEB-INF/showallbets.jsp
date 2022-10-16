@@ -30,12 +30,20 @@
                         <div class="main-body">
                             <div class="side-bar">
                                 <img src="/imgs/coffee_black_logo.png">
-                                <button class="btn">Create Account</button>
-                                <button class="btn">Login</button>
+                                <button class="btn">Scores</button>
+                                <button class="btn">Place Bets</button>
+                                <button class="btn">Your Bets</button>
+                                <button class="btn">Tokens</button>
+                                <button class="btn">Stadiums</button>
+                                <button class="btn">All Bets</button>
+                                <button class="btn">Creators</button>
+                                <button class="btn">Settings</button>
+                                <button class="btn">Log Out</button>
                             </div>
-                            <div class="main-page">
+                            <div class="showallbets">
+                                <h1> All Bets</h1>
+                                <!-- Show All bets here -->
 
-                                <rssapp-wall id="0b6SDhsyDBvZ3sek"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
                         </div>
                     </div>
                 </body>
