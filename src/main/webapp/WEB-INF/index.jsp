@@ -10,28 +10,10 @@
 <title>Dashboard</title>
 </head>
 <body>
-    <body>
-        <div class="main">
-            <div class="nav">
-                <div class="nav-title">
-                    <img src="/imgs/coffee_black_logo.png">
-                </div>
-                <div class="Coffee-Title">
-                    <h1> Coffee Bets</h1>
-                </div>
-                <h1>    </h1>
-                <ul class="nav-links">
-                    <button class="btn">Create Account</button>
-                    <button class="btn">Login</button>
-                </ul>
-            </div>
-            <div class="main-page">
-                <div class="news">
-                    <img src="/imgs/news.jpg">
-                </div>
-                <div class="scores">
-                    <img src="/imgs/scores.jpg">
-                </div>
 
+
+<h1>Hello ${user.userName} </h1>
+
+<a href="/logout">Logout</a>
 </body>
 </html>
