@@ -26,14 +26,6 @@
 }
 
 
-
-
-
-
-
-/* 
-************Pat's CSS********************
-******************************** */
 .Coffee-Title h1{
     color: F89917;
     font-family: 'Brush Script MT', cursive;
@@ -164,8 +156,4 @@
     height:100%;
     width: 100%;
     
-}
-.main-body{
-    display: flex;
-    height:100vh;
 }
