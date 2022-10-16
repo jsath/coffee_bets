@@ -19,7 +19,7 @@
                     </div>
                         <div class="nav">
                             <div class="nav-title">
-                                <img src="/imgs/coffee_black_logo.png">
+                                <!-- <img src="/imgs/coffee_black_logo.png"> -->
                             </div>
                             <div class="Coffee-Title">
                                 <h1> Coffee Bets</h1>
@@ -29,6 +29,7 @@
                         </div>
                         <div class="main-body">
                             <div class="side-bar">
+                                <img src="/imgs/coffee_black_logo.png">
                                 <button class="btn">Scores</button>
                                 <button class="btn">Place Bets</button>
                                 <button class="btn">Your Bets</button>

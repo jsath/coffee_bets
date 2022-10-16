@@ -29,9 +29,9 @@
 .Coffee-Title h1{
     color: F89917;
     font-family: 'Brush Script MT', cursive;
-    font-size: 100px;
+    font-size: 50px;
     justify-content: center;
-    margin: 50px;
+    margin: 10px;
 
 
 }
@@ -156,13 +156,13 @@ body{
     height: 100%;
     position: fixed;
     z-index: 2;
-    top: 250px;
-
-
-
-
-
+    top: 100px;
 }
+.side-bar img{
+    margin: 20px;
+    height: 150px;
+}
+
 .news{
     display: flex;
     height: 200px;
