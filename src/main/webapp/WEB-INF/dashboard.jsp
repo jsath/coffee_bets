@@ -14,19 +14,18 @@
 
                 <body>
                     <div class="main-box">
+                        <div class="ticker">
+                        <rssapp-ticker id="0b6SDhsyDBvZ3sek"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                    </div>
                         <div class="nav">
                             <div class="nav-title">
                                 <img src="/imgs/coffee_black_logo.png">
                             </div>
                             <div class="Coffee-Title">
                                 <h1> Coffee Bets</h1>
+
                             </div>
                             <h1> </h1>
-                            <!-- <ul class="nav-links">
-                                <li><button class="btn">Settings</button></li>
-                                <li><button class="btn">Creators</button></li>
-                                <li><button class="btn">Sign Out</button></li>
-                            </ul> -->
                         </div>
                         <div class="main-body">
                             <div class="side-bar">
@@ -42,7 +41,6 @@
                             </div>
                             <div class="main-page">
 
-                                <rssapp-ticker id="0b6SDhsyDBvZ3sek"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
                                 <rssapp-wall id="0b6SDhsyDBvZ3sek"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
                         </div>
                     </div>
