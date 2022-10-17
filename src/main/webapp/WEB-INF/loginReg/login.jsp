@@ -38,7 +38,7 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <form:input path="password"type="password" id="form2Example2" class="form-control" />
+    <form:input path="password" type="password" id="form2Example2" class="form-control" />
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
   </div>
 
