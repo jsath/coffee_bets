@@ -9,7 +9,7 @@
 
                 <head>
                     <meta charset="UTF-8">
-                    <title>Dashboard</title>
+                    <title>Coffee Bets</title>
                 </head>
 
                 <body>
@@ -30,8 +30,8 @@
                         <div class="main-body">
                             <div class="side-bar">
                                 <img src="/imgs/coffee_black_logo.png">
-                                <button class="btn">Create Account</button>
-                                <button class="btn">Login</button>
+                                <a href="/register"><button class="btn">Create Account</button></a>
+                                <a href="/login"><button class="btn">Log In</button></a>
                             </div>
                             <div class="main-page">
 

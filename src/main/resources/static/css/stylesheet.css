@@ -132,14 +132,7 @@ body{
     margin: auto;
     margin-top: 250px;
 }
-.ticker{
-    position: fixed;
-    z-index: 4;
-    width: 100%;
 
-
-
-}
 .side-bar{
     display: flex;
     width: 150px;
@@ -187,6 +180,23 @@ body{
     width: 100%;
     
 }
+
+
+#tickerholder{
+	height:20px; 
+	width: 100%; 
+    position: fixed;
+    z-index: 4;
+    top: 2px;
+    background-color: F89917; 
+    text-decoration: none; 
+    color: black; 
+}
+#tickerholder a{
+	text-decoration: none; 
+	color: black; 
+}
+
 .showallbets{
     align-items: center;
     justify-content: center;

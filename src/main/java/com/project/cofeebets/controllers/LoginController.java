@@ -25,14 +25,15 @@ public class LoginController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "dashboard.jsp";
+		return "index.jsp";
 	}
 
-
+	
 	@GetMapping("/login")
 	public String login(@ModelAttribute User user, @ModelAttribute LoginUser loginUser) {
-		return "login.jsp";
+		return "/loginReg/login.jsp";
 	}
+	
 	
 	@PostMapping("/login")
 	public String login(@Valid @ModelAttribute("loginUser") LoginUser loginUser, BindingResult result, Model model, HttpSession session) {
@@ -40,13 +41,13 @@ public class LoginController {
 		
 		if(result.hasErrors()) {
 			model.addAttribute("user", new User());
-			return "login.jsp";
+			return "/loginReg/login.jsp";
 		}
 		
 		User foundUser = userServ.login(loginUser, result);
 		if(foundUser == null) {
 			model.addAttribute("user", new User());
-			return "login.jsp";	
+			return "/loginReg/login.jsp";	
 		}
 		
 		session.setAttribute("user_id", foundUser.getId());
@@ -54,6 +55,13 @@ public class LoginController {
 		
 		return "redirect:/dashboard"; 
 	}
+	
+	
+	@GetMapping("/register")
+	public String register(@ModelAttribute User user, @ModelAttribute LoginUser loginUser) {
+		return "/loginReg/registration.jsp";
+	}
+	
 	
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, HttpSession session) {
@@ -69,13 +77,14 @@ public class LoginController {
 		if(result.hasErrors()) {
 			model.addAttribute("loginUser", new LoginUser());
 			
-			return "login.jsp";
+			return "/loginReg/registration.jsp";
 		}
 		User createdUser = userServ.registerUser(user);
 		session.setAttribute("user_id", createdUser.getId());
 		return "redirect:/dashboard";
 
 	}
+	
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model, HttpSession session){
@@ -85,10 +94,9 @@ public class LoginController {
 		Long id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(id);
 		model.addAttribute(user);
-		return "index.jsp";
+		return "dashboard.jsp";
 		
 	}
-	
 	
 	
 	
@@ -97,12 +105,8 @@ public class LoginController {
 	 
 		// Set userId to null and redirect to login/register page
 		session.setAttribute("user_id", null);
-	     
 	    return "redirect:/";
 	}
 
-	
-	
-	
-	
+
 }
