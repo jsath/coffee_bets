@@ -25,7 +25,7 @@ public class LoginController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "dashboard.jsp";
+		return "index.jsp";
 	}
 
 
@@ -85,7 +85,7 @@ public class LoginController {
 		Long id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(id);
 		model.addAttribute(user);
-		return "index.jsp";
+		return "dashboard.jsp";
 		
 	}
 	
