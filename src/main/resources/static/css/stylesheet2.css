@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    /* background: rgb(82,131,162);
+    background: linear-gradient(0deg, rgba(82,131,162,1) 0%, rgba(0,0,0,1) 70%);
+    height:100vh; */
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(248,153,23,1) 0%, rgba(0,0,0,1) 59%);
+} 
+
+span{
+	 color:  rgba(248,153,23,1);
+    font-family: 'Brush Script MT', cursive;
+    font-size: 50px;
+    margin: 10px;
+}
+
+nav{
+background: rgb(0,0,0);	
+}

@@ -9,10 +9,11 @@
 <meta charset="UTF-8">
 <title>Test</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/stylesheet2.css">
 <!-- <link rel="stylesheet" href="/css/stylesheet.css"> -->
 
 <head>
-<body>
+<body class="p-3 mb-2 bg-gradient-success text-white">
 
 
 
@@ -38,7 +39,7 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <form:input path="password"type="password" id="form2Example2" class="form-control" />
+    <form:input path="password" type="password" id="form2Example2" class="form-control"/>
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
   </div>
 
