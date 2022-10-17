@@ -53,7 +53,7 @@
                                 <button class="btn">All Bets</button>
                                 <button class="btn">Creators</button>
                                 <button class="btn">Settings</button>
-                                <button class="btn">Log Out</button>
+                                <a href="/logout"><button class="btn">Log Out</button></a>
                             </div>
                             <div class="main-page">
 
