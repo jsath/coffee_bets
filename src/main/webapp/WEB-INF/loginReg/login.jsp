@@ -38,7 +38,7 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <form:input path="password"type="password" id="form2Example2" class="form-control" />
+    <form:input path="password" type="password" id="form2Example2" class="form-control" />
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
   </div>
 
@@ -59,7 +59,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" value="login" class="btn btn-primary btn-block mb-4">Sign in</button>
+  <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4"/>
 
   <!-- Register buttons -->
   <div class="text-center">
