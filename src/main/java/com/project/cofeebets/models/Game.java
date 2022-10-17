@@ -38,29 +38,18 @@ public class Game {
     @Size(min=3, max=128, message="Away Team must be between 3 and 128 characters")
     private String awayTeam;
     
-    @NotEmpty(message="Home Team Score is required!")
-    @Size(min=3, max=128, message="Home Team Score must not be null")
-    private int homeTeamScore;
+    private Integer homeTeamScore;
     
-    @NotEmpty(message="Away Team Score is required!")
-    @Size(min=3, max=128, message="Away Team Score must not be null")
-    private int awayTeamScore;
+    private Integer awayTeamScore;
     
-    @NotEmpty(message="Home Team Odds is required!")
-    @Size(min=3, max=128, message="Home Team Odds must not be null")
-    private int homeTeamOdds;
+    private Integer homeTeamOdds;
+    
+    private Integer awayTeamOdds;
     
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date gameDay;
     
     private int isClosed = 0;
-    
-    @Transient
-    @NotEmpty(message="Confirm Password is required!")
-    @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
-    private String confirm;
-    
-    private int adminStatus = 0;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -107,28 +96,37 @@ public class Game {
 		this.awayTeam = awayTeam;
 	}
 
-	public int getHomeTeamScore() {
+	public Integer getHomeTeamScore() {
 		return homeTeamScore;
 	}
 
-	public void setHomeTeamScore(int homeTeamScore) {
+	public void setHomeTeamScore(Integer homeTeamScore) {
 		this.homeTeamScore = homeTeamScore;
 	}
 
-	public int getAwayTeamScore() {
+	public Integer getAwayTeamScore() {
 		return awayTeamScore;
 	}
 
-	public void setAwayTeamScore(int awayTeamScore) {
+	public void setAwayTeamScore(Integer awayTeamScore) {
 		this.awayTeamScore = awayTeamScore;
 	}
 
-	public int getHomeTeamOdds() {
+	public Integer getHomeTeamOdds() {
 		return homeTeamOdds;
 	}
 
-	public void setHomeTeamOdds(int homeTeamOdds) {
+	public void setHomeTeamOdds(Integer homeTeamOdds) {
 		this.homeTeamOdds = homeTeamOdds;
+	}
+	
+	
+	public Integer getAwayTeamOdds() {
+		return awayTeamOdds;
+	}
+
+	public void setAwayTeamOdds(Integer awayTeamOdds) {
+		this.awayTeamOdds = awayTeamOdds;
 	}
 
 	public Date getGameDay() {
@@ -147,21 +145,6 @@ public class Game {
 		this.isClosed = isClosed;
 	}
 
-	public String getConfirm() {
-		return confirm;
-	}
-
-	public void setConfirm(String confirm) {
-		this.confirm = confirm;
-	}
-
-	public int getAdminStatus() {
-		return adminStatus;
-	}
-
-	public void setAdminStatus(int adminStatus) {
-		this.adminStatus = adminStatus;
-	}
 	
 	public Stadium getStadium() {
 		return stadium;

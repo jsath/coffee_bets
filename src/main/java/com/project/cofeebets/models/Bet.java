@@ -25,9 +25,9 @@ public class Bet {
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
  
- @NotEmpty(message="Amount is required!")
- @Size(min=3, max=128, message="Amount must not be null")
- private int amount;
+// @NotEmpty(message="Amount is required!")
+// @Size(min=3, max=128, message="Amount must not be null")
+ private Integer amount;
  
  @NotEmpty(message="Team is required!")
  @Size(min=3, max=128, message="Team must be between 3 and 128 characters")
@@ -52,10 +52,10 @@ public class Bet {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getAmount() {
+	public Integer getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
 	public String getTeam() {

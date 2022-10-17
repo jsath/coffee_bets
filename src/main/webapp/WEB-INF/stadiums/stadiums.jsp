@@ -41,7 +41,7 @@
                                 <button class="btn">Log Out</button>
                             </div>
                             <div class="main-page">
-                                    <!-- finished game info here -->
+                                <!-- Show stadiums here -->
                         </div>
                     </div>
                 </body>
