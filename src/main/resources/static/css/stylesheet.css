@@ -31,15 +31,12 @@
     font-family: 'Brush Script MT', cursive;
     font-size: 50px;
     justify-content: center;
-    margin: 10px;
-
-
+    margin: 15px;
 }
 .nav-title img{
     height:200px;
     position: relative;
-    
-
+ 
 }
 body{
     /* background: rgb(82,131,162);
@@ -103,6 +100,7 @@ body{
     list-style-type:none;
     text-decoration: none;
     font-family: 'Brush Script MT', cursive;
+    width: fit-content;
 }
 /* .a{
     display:flex;
@@ -181,9 +179,9 @@ body{
 
 
 #tickerholder{
-	height:20px; 
+	height:28px; 
 	width: 100%; 
-    position: relative;
+    position: fixed;
     z-index: 4;
     top: 0px;
     background-color: F89917; 
