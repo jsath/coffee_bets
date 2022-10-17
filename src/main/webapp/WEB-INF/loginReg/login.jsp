@@ -9,10 +9,11 @@
 <meta charset="UTF-8">
 <title>Test</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/stylesheet2.css">
 <!-- <link rel="stylesheet" href="/css/stylesheet.css"> -->
 
 <head>
-<body>
+<body class="p-3 mb-2 bg-gradient-success text-white">
 
 
 
@@ -27,7 +28,7 @@
 
 
 <form:form action="/login" method="post" modelAttribute="loginUser" class = "w-25% p-3">
-<div><h1 class="text-center">Login</h1></div> <br>
+<div class="login"><h1 class="text-center">Login</h1></div> <br>
 
   <!-- Email input -->
   <div class="form-outline mb-4">
@@ -38,7 +39,9 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <form:input path="password" type="password" id="form2Example2" class="form-control" />
+
+    <form:input path="password" type="password" id="form2Example2" class="form-control"/>
+
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
   </div>
 
