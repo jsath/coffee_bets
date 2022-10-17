@@ -59,7 +59,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" value="login" class="btn btn-primary btn-block mb-4">Sign in</button>
+  <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4"/>
 
   <!-- Register buttons -->
   <div class="text-center">
