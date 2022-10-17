@@ -9,51 +9,67 @@
 <meta charset="UTF-8">
 <title>Test</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/css/stylesheet.css">
+<!-- <link rel="stylesheet" href="/css/stylesheet.css"> -->
 
-</head>
+<head>
 <body>
 
 
-<div class="holder">
 
-<div class="main">
+<nav class="text-center" class="navbar navbar-light bg-light">
+  <span class="text-center" class="navbar-text">
+    Coffee Bets
+  </span>
+</nav> <br>
+
+<div class="container d-flex justify-content-evenly mt-3">
+  
 
 
+<form:form action="/login" method="post" modelAttribute="loginUser" class = "w-25% p-3">
+<div><h1 class="text-center">Login</h1></div> <br>
 
-<div class="second">
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <form:input path="email" type="email" id="form2Example1" class="form-control" />
+    <form:label  path="email" class="form-label" for="form2Example1">Email address</form:label>
+    <form:errors path="email" class="text-danger"/>
+  </div>
 
-<h1>Login</h1>
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <form:input path="password"type="password" id="form2Example2" class="form-control" />
+    <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
+  </div>
 
-<form:form action="/login" method="post" modelAttribute="loginUser">
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Remember me </label>
+      </div>
+    </div>
 
-        
-        <form:label path="email">Email: </form:label><br>
-        <form:input path="email"/><br>
-        <form:errors path="email" class="text-danger"/><br>
-        
-        <form:label path="password">Password: </form:label><br>
-        <form:input type="password" path="password"/><br>
-        <form:errors path="password" class="text-danger"/><br>
-        
+    <div class="col">
+      <!-- Simple link -->
+      <a href="#!">Forgot password?</a>
+    </div>
+  </div>
 
-       
-        <input type="submit" value="Login" class="btn btn-primary"/>
+  <!-- Submit button -->
+  <button type="button" value="login" class="btn btn-primary btn-block mb-4">Sign in</button>
 
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Not a member? <a href="#!">Register</a></p>
+   </div>
 </form:form>
 
 
 </div>
-
-</div>
-
-
-
-
-
-
-
-
-
 </body>
-</html>
+</head>
+
+
