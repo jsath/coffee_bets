@@ -39,12 +39,9 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-<<<<<<< HEAD
-    <form:input path="password" type="password" id="form2Example2" class="form-control"/>
-=======
     <form:input path="password" type="password" id="form2Example2" class="form-control" />
->>>>>>> 0a5ba481349e5d9d2cb95c3e2b46d01521ade6db
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
+    <form:errors path="password" class="text-danger"/>
   </div>
 
   <!-- 2 column grid layout for inline styling -->
