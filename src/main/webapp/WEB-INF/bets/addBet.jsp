@@ -17,7 +17,6 @@
 
 
 <h1>Add Bet</h1>
-<p id='gameapi' style='font-size: 0px'>${id}<p>
 
 			<div id="gamedetails">
 			
@@ -61,7 +60,9 @@
 <a href="/dashboard" ><button>Home</button></a>
 
 </div>
-
+<div style='position:fixed;bottom:0;'>
+<p id='gameapi' style='font-size: 0px'>${id}</p>
+</div>
 </body>
 </html>
 
