@@ -40,6 +40,7 @@
 					<input type="submit" value="Register" class="btn btn-primary"/>
 				
 					</form:form>
+					<a href="/login">Login</a>
 				</div>
 			</div>
 		</div>

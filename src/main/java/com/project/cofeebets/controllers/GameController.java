@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.project.cofeebets.models.Game;
 import com.project.cofeebets.models.User;
 import com.project.cofeebets.services.GameService;
+import com.project.cofeebets.services.StadiumService;
 import com.project.cofeebets.services.UserService;
 
 @Controller
@@ -25,9 +26,11 @@ public class GameController {
 	
 	public final UserService userServ; 
 	public final GameService gameServ; 
-	public GameController(UserService userServ,GameService gameServ) {
+	public final StadiumService stadiumServ; 
+	public GameController(UserService userServ,GameService gameServ, StadiumService stadiumServ) {
 		this.userServ = userServ;
 		this.gameServ = gameServ;
+		this.stadiumServ = stadiumServ;
 	}
 	
 	
@@ -39,14 +42,16 @@ public class GameController {
 	}
 	
 	
-	@PostMapping("/addgame")
-	public String add(@Valid @ModelAttribute("game") Game game, BindingResult result,Long id) {
-		
-		if(result.hasErrors()) {
-			return "/games/addgame.jsp";
-		}else {
+	@PostMapping("/addgame/{apiId}/{stadiumId}")
+	public String add(@PathVariable("apiId") Long apiId, @PathVariable("stadiumId") Long stadiumId, Game game) {
+		game.setApiId(apiId);
+		game.setStadium(stadiumServ.getOne(stadiumId));
+		if(gameServ.getGameByApiId(game.getApiId()) != null ){
+			return "redirect:/bets/addbet/" + game.getApiId();
+		}
+		else {
 			gameServ.addGame(game);
-			return "redirect:/dashboard";
+			return "redirect:/bets/addbet/" + game.getApiId();
 		}
 	}
 	

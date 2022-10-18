@@ -12,5 +12,7 @@ import com.project.cofeebets.models.Game;
 @Repository
 public interface GameRepository extends CrudRepository<Game, Long> {
 	Optional<Game> findById(String name);
+	Optional<Game> findByApiId(Long apiId);
+	
 
 }

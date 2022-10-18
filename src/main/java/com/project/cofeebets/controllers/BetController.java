@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.project.cofeebets.models.Bet;
+import com.project.cofeebets.models.Game;
 import com.project.cofeebets.models.User;
 import com.project.cofeebets.services.BetService;
+import com.project.cofeebets.services.GameService;
 import com.project.cofeebets.services.UserService;
 
 
@@ -26,23 +29,27 @@ public class BetController {
 	
 	public final UserService userServ; 
 	public final BetService betServ; 
-	public BetController(UserService userServ,BetService betServ) {
+	public final GameService gameServ;
+	public BetController(UserService userServ,BetService betServ,GameService gameServ) {
 		this.userServ = userServ;
 		this.betServ = betServ;
+		this.gameServ = gameServ;
 	}
 	
 	
 	// Create 
 	
-	@GetMapping("/addbet")
-	public String add(@ModelAttribute("bet") Bet bet) {
+	@GetMapping("/addbet/{id}")
+	public String add(@ModelAttribute("bet") Bet bet, @PathVariable("id") Long id, Model model) {
+		Game game = gameServ.getGameByApiId(id);
+		model.addAttribute("id", id);
+		model.addAttribute(game);
 		return "/bets/addBet.jsp";
 	}
 	
 	
 	@PostMapping("/addbet")
 	public String add(@Valid @ModelAttribute("bet") Bet bet, BindingResult result,Long id) {
-		
 		if(result.hasErrors()) {
 			return "/bets/addbet.jsp";
 		}else {
