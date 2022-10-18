@@ -11,6 +11,9 @@ src/main/resources/static/apiservice/games.js
 src/main/resources/static/apiservice/bet.js
 
 
+src/main/resources/application.properties
+
+
 ### STS ###
 .apt_generated
 .classpath
