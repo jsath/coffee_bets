@@ -29,6 +29,11 @@ public class LoginController {
 		return "index.jsp";
 	}
 
+	@GetMapping("/patstest")
+	public String test() {
+		return "creators.jsp";
+	}
+
 	
 	@GetMapping("/login")
 	public String login(@ModelAttribute User user, @ModelAttribute LoginUser loginUser) {
@@ -108,6 +113,5 @@ public class LoginController {
 		session.setAttribute("user_id", null);
 	    return "redirect:/";
 	}
-
 
 }
