@@ -18,13 +18,20 @@
 
 <form:form action="/stadiums/addstadium" method="post" modelAttribute="stadium">
 
-        <form:label path="name">Stadium Name: </form:label><br>
-        <form:input  path="name"/><br>
-        <form:errors path="name" /><br>
+        <form:label path="location">Location: </form:label><br>
+        <form:input  path="location"/><br>
         
-        <form:label path="address">Address: </form:label><br>
-        <form:input  path="address"/><br>
-        <form:errors path="address" /><br>
+        <form:label path="stadiumName">Stadium Name:</form:label><br>
+        <form:input  path="stadiumName"/><br>
+        
+        <form:label path="imgFileName">Arena File Location:</form:label><br>
+        <form:input path="imgFileName"/><br>
+        
+        <form:label type="number" path="capacity">Capacity:</form:label><br>
+        <form:input path="capacity"/><br>
+        
+        <form:label path="teamName">Team Name:</form:label><br>
+        <form:input path="teamName"/><br>
         
         <input type="submit" value="Add Stadium" />
 
