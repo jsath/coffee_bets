@@ -49,7 +49,7 @@
                                 <button class="btn">Place Bets</button>
                                 <button class="btn">Your Bets</button>
                                 <button class="btn">Tokens</button>
-                                <button class="btn">Stadiums</button>
+                               <a href="/stadiums/all"><button class="btn">Stadiums</button></a>
                                 <button class="btn">All Bets</button>
                                 <button class="btn">Creators</button>
                                 <button class="btn">Settings</button>

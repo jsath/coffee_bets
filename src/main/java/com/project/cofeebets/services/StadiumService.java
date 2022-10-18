@@ -25,7 +25,7 @@ public class StadiumService {
 	}
 	
 	
-	public List<Stadium> getAll() {
+	public List<Stadium> allStadiums() {
 		return (List<Stadium>) stadiumRepo.findAll();
 	}
 		
