@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.project.cofeebets.models.Game;
 import com.project.cofeebets.models.LoginUser;
 import com.project.cofeebets.models.User;
 import com.project.cofeebets.services.UserService;
@@ -26,6 +27,11 @@ public class LoginController {
 	@GetMapping("/")
 	public String home() {
 		return "index.jsp";
+	}
+
+	@GetMapping("/patstest")
+	public String test() {
+		return "creators.jsp";
 	}
 
 	
@@ -87,7 +93,7 @@ public class LoginController {
 	
 	
 	@GetMapping("/dashboard")
-	public String dashboard(Model model, HttpSession session){
+	public String dashboard(Model model, HttpSession session, @ModelAttribute("game") Game game){
 		if(session.getAttribute("user_id") == null) {
 			return "redirect:/login";
 		}
@@ -107,6 +113,5 @@ public class LoginController {
 		session.setAttribute("user_id", null);
 	    return "redirect:/";
 	}
-
 
 }

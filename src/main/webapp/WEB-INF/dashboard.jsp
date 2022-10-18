@@ -4,7 +4,8 @@
             <%@ page isErrorPage="true" %>
                 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
-                <script src="/apiservice/testing.js"></script>
+                <script src="/apiservice/ticker.js"></script>
+                <script src="/apiservice/games.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -56,10 +57,27 @@
                                 <a href="/logout" style="text-decoration:none;"><button class="btn">Log Out</button></a>
                             </div>
                             <div class="main-page">
+                         
+                         
+                         
+                         
+                            <div class="date-selector">
+                            	<input type="date" id="dateInput"/>
+                            </div>
+                            
+                            <div id="games">
+                            </div>
+                            
+                            
 
-                                <rssapp-magazine id="0b6SDhsyDBvZ3sek"></rssapp-magazine><script src="https://widget.rss.app/v1/magazine.js" type="text/javascript" async></script>
                         </div>
                     </div>
                 </body>
+                <script>
+                var date = new Date();
+                var currentDate = date.toISOString().slice(0,10);
+                document.getElementById('dateInput').value = currentDate;
+                </script>
+                
 
                 </html>

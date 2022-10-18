@@ -29,9 +29,15 @@ public class Bet {
 // @Size(min=3, max=128, message="Amount must not be null")
  private Integer amount;
  
+ private Integer payout; 
+ 
+ private Long apiId; 
+ 
  @NotEmpty(message="Team is required!")
  @Size(min=3, max=128, message="Team must be between 3 and 128 characters")
  private String Team;
+ 
+ private Integer multiplier; 
  
  @Column(updatable=false)
  private Date createdAt;
@@ -99,5 +105,23 @@ public class Bet {
 	  protected void onUpdate() {
 	    this.updatedAt = new Date();
 	 }
+	public Integer getPayout() {
+		return payout;
+	}
+	public void setPayout(Integer payout) {
+		this.payout = payout;
+	}
+	public Long getApiId() {
+		return apiId;
+	}
+	public void setApiId(Long apiId) {
+		this.apiId = apiId;
+	}
+	public Integer getMultiplier() {
+		return multiplier;
+	}
+	public void setMultiplier(Integer multiplier) {
+		this.multiplier = multiplier;
+	}
 
 }
