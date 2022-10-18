@@ -37,7 +37,7 @@
                             
                             </div>
                             <div class="Coffee-Title">
-                                <h1> Coffee Bets</h1>
+                                <h1>Coffee Bets</h1>
 
                             </div>
                             <h1> </h1>
@@ -53,7 +53,7 @@
                                 <button class="btn">All Bets</button>
                                 <button class="btn">Creators</button>
                                 <button class="btn">Settings</button>
-                                <a href="/logout"><button class="btn">Log Out</button></a>
+                                <a href="/logout" style="text-decoration:none;"><button class="btn">Log Out</button></a>
                             </div>
                             <div class="main-page">
 
