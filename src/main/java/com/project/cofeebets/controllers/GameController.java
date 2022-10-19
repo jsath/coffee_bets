@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.cofeebets.models.Game;
+import com.project.cofeebets.models.Stadium;
 import com.project.cofeebets.models.User;
 import com.project.cofeebets.services.GameService;
 import com.project.cofeebets.services.StadiumService;
@@ -52,6 +53,18 @@ public class GameController {
 		else {
 			gameServ.addGame(game);
 			return "redirect:/bets/addbet/" + game.getApiId();
+		}
+	}
+	
+	@PostMapping("/addgame")
+	public String add(@Valid @ModelAttribute("game") Game game, BindingResult result,Long id) {
+		
+		if(result.hasErrors()) {
+			System.out.println(result);
+			return "/games/addGame.jsp";
+		}else {
+			gameServ.addGame(game);
+			return "redirect:/dashboard";
 		}
 	}
 	
