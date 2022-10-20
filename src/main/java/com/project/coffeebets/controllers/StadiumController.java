@@ -1,4 +1,4 @@
-package com.project.cofeebets.controllers;
+package com.project.coffeebets.controllers;
 
 import java.util.List;
 
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.cofeebets.models.Game;
-import com.project.cofeebets.models.Stadium;
-import com.project.cofeebets.services.GameService;
-import com.project.cofeebets.services.StadiumService;
+import com.project.coffeebets.models.Game;
+import com.project.coffeebets.models.Stadium;
+import com.project.coffeebets.services.GameService;
+import com.project.coffeebets.services.StadiumService;
 
 @Controller
 @RequestMapping("/stadiums")

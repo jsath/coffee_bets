@@ -1,4 +1,4 @@
-package com.project.cofeebets.services;
+package com.project.coffeebets.services;
 
 
 import java.util.Optional;
@@ -7,9 +7,9 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.project.cofeebets.models.LoginUser;
-import com.project.cofeebets.models.User;
-import com.project.cofeebets.repositories.UserRepository;
+import com.project.coffeebets.models.LoginUser;
+import com.project.coffeebets.models.User;
+import com.project.coffeebets.repositories.UserRepository;
     
 
     

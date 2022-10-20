@@ -1,13 +1,13 @@
-package com.project.cofeebets.services;
+package com.project.coffeebets.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.project.cofeebets.models.Bet;
-import com.project.cofeebets.models.User;
-import com.project.cofeebets.repositories.BetRepository;
+import com.project.coffeebets.models.Bet;
+import com.project.coffeebets.models.User;
+import com.project.coffeebets.repositories.BetRepository;
 
 
 

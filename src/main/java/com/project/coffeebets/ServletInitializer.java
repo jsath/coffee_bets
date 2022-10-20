@@ -1,4 +1,4 @@
-package com.project.cofeebets;
+package com.project.coffeebets;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
