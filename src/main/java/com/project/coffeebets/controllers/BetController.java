@@ -43,6 +43,13 @@ public class BetController {
 	}
 	
 	
+	@GetMapping("/leaderboard")
+	public String leaderboard(HttpSession session, Model model) {
+		Long id = (Long) session.getAttribute("user_id");
+		model.addAttribute(userServ.getUserById(id));
+		return "leaderboard.jsp";
+	}
+	
 	// Create 
 	
 	@GetMapping("/addbet/{id}")

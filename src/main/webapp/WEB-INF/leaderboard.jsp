@@ -5,7 +5,6 @@
             	<link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
                 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
-                <script src="/apiservice/games.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                     crossorigin="anonymous"></script>
@@ -49,6 +48,7 @@
                     <div class="main-body">
                         <div class="side-bar">
                             <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+                            <button class="btn">Scores</button>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
                                     Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
@@ -57,35 +57,20 @@
                             <a style='text-decoration:none;' href='/bets/leaderboard'><button class="btn">Leaderboard</button></a>
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
 
-                        </div>
+                    
+                       </div>
                         <div class="main-page">
-                        
-                        
-
-
-                        <div class="gamesByDate">
-                                <input type="date" id="dateInput" />
-                        </div>
-
-                        <div id="games" style='display:flex; flex-direction: row;margin-top: 25px;flex-wrap:wrap-reverse;'>
-
-                        </div>
-                        
-                        <rssapp-carousel id="Xx5P2L2o3BBM2Iw7"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
-                        
-                        
-                        
-                        <table class='table table-dark text-center' style='width:400px; margin-left: auto; margin-right:auto;'>
+                      	<table class='table table-dark text-center' style='width:400px; margin-left: auto; margin-right:auto;'>
                         
                         <thead>
                         <tr>
-                        <th>Recent Payouts</th>
+                        <th>Total Profit</th>
                         <th>User</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var='bet' items='${recentBets}'>
+                        <c:forEach var='bet' items=''>
                         	<tr>
                         	
                         	<td>$<c:out value='${bet.payout}'/></td>
@@ -97,31 +82,10 @@
                         </tbody>
                         </table>
                         
+                       
+                        </div>
                         
+                     </div>
 
-                     
-                    </div>
-                </div>
-                    
-
-
-
-
-
-
-
-
-                </body>
-                <script>
-                    var date = new Date();
-                    console.log("hi there! local time -", date);
-
-                    var month = date.getMonth() + 1;
-                    var localDate = date.getFullYear() + "-" + month + "-" + date.getDate();
-                    document.getElementById('dateInput').value = localDate;
-
-
-                </script>
-
-
-                </html>
+</body>
+</html>

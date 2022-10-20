@@ -27,20 +27,16 @@
 
                 <body>
 
-                    <div id='tickerholder'>
-                        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker>
-                        <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-
-                    </div>
+                <div id='tickerholder'>
+                                    <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                
+                </div>
                     <br>
                     <br>
 
 
                     <div class="nav">
                         <div class="nav-title">
-
-
-
                         </div>
                         <div class="Coffee-Title">
 
@@ -48,7 +44,7 @@
                                 <h1><img width='400' src='/imgs/bets_clear.png'></h1>
                             </a>
                         </div>
-                        <h4 class='text-center text-warning'>${user.wallet.coffeebeans}</h4>
+  					<h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 
                     </div>
                     <div class="main-body">
