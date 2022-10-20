@@ -1,4 +1,4 @@
-package com.project.cofeebets.repositories;
+package com.project.coffeebets.repositories;
 
 import java.util.Optional;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.project.cofeebets.models.Bet;
+import com.project.coffeebets.models.Bet;
 
 
 

@@ -1,4 +1,4 @@
-package com.project.cofeebets.models;
+package com.project.coffeebets.models;
 
 
 

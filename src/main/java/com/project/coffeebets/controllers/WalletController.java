@@ -1,4 +1,4 @@
-package com.project.cofeebets.controllers;
+package com.project.coffeebets.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.cofeebets.models.Game;
-import com.project.cofeebets.models.User;
-import com.project.cofeebets.models.Wallet;
-import com.project.cofeebets.services.UserService;
-import com.project.cofeebets.services.WalletService;
+import com.project.coffeebets.models.Game;
+import com.project.coffeebets.models.User;
+import com.project.coffeebets.models.Wallet;
+import com.project.coffeebets.services.UserService;
+import com.project.coffeebets.services.WalletService;
 
 @Controller
 @RequestMapping("/wallets")

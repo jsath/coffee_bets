@@ -1,4 +1,4 @@
-package com.project.cofeebets.controllers;
+package com.project.coffeebets.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.cofeebets.models.Game;
-import com.project.cofeebets.models.LoginUser;
-import com.project.cofeebets.models.User;
-import com.project.cofeebets.models.Wallet;
-import com.project.cofeebets.services.BetService;
-import com.project.cofeebets.services.UserService;
-import com.project.cofeebets.services.WalletService;
+import com.project.coffeebets.models.Game;
+import com.project.coffeebets.models.LoginUser;
+import com.project.coffeebets.models.User;
+import com.project.coffeebets.models.Wallet;
+import com.project.coffeebets.services.BetService;
+import com.project.coffeebets.services.UserService;
+import com.project.coffeebets.services.WalletService;
 
 @Controller
 public class LoginController {

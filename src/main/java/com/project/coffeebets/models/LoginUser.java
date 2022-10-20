@@ -1,4 +1,4 @@
-package com.project.cofeebets.models;
+package com.project.coffeebets.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

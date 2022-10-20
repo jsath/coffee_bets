@@ -1,4 +1,4 @@
-package com.project.cofeebets;
+package com.project.coffeebets;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

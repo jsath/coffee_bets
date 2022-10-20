@@ -1,4 +1,4 @@
-package com.project.cofeebets.services;
+package com.project.coffeebets.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.cofeebets.models.Game;
-import com.project.cofeebets.models.Stadium;
-import com.project.cofeebets.repositories.GameRepository;
-import com.project.cofeebets.repositories.StadiumRepository;
+import com.project.coffeebets.models.Game;
+import com.project.coffeebets.models.Stadium;
+import com.project.coffeebets.repositories.GameRepository;
+import com.project.coffeebets.repositories.StadiumRepository;
 
 @Service
 public class StadiumService {
