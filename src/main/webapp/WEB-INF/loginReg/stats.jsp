@@ -2,7 +2,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
             <%@ page isErrorPage="true" %>
-                <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+               	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -13,19 +13,20 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
                     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                     crossorigin="anonymous"></script>
-                <!DOCTYPE html>
+            
                 <html lang="en">
+                <!DOCTYPE html>
+
 
                 <head>
                     <meta charset="UTF-8">
-                    <title>Add Bet</title>
+                    <title>Stats</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
 
                 </head>
 
                 <body>
-                
-                <div id='tickerholder'>
+                 <div id='tickerholder'>
                                     <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
                 
                 </div>
@@ -60,54 +61,14 @@
                         </div>
                         <div class="main-page">
                         
-                        
-                                <h1>Add Bet</h1>
-
-                                <h2>Your Balance: $${wallet.coffeebeans}</h2>
-
-                                <div id="gamedetails">
-
-                                    <!-- Dynamically rendered with api -->
-
-                                </div>
-
-
-
-
-                                <form:form action="/bets/addbet" method="post" modelAttribute="bet">
-
-                                    <form:input path='apiId' type='hidden' value='${id}'></form:input>
-                                    <form:input path='game' type='hidden' value='${game.id}'></form:input>
-                                    <form:input path="user" type="hidden" value="${user_id}" />
-
-
-                                    <form:label path="amount">Amount: </form:label><br>
-                                    <form:input id='amount' type="number" path="amount" min='1'
-                                        max='${wallet.coffeebeans}' onchange="calculatePayout(${id})" /><br>
-                                    <form:errors path="amount" /><br>
-
-                                    <form:label path='Team'>Team: </form:label>
-                                    <form:select id='team' path="Team" onchange="calculatePayout(${id})">
-                                        <form:option id='home' value=''></form:option>
-                                        <form:option id='away' value=''></form:option>
-                                    </form:select><br>
-                                    <form:errors path="Team" /><br>
-
-
-
-
-                                    <form:label path='payout'>Potential payout</form:label>
-                                    <form:input path='payout' id='stake' readonly='true' type="text" />
-
-
-                                    <input type="submit" value="Add Bet" />
-
-                                </form:form>
-
+                        <div class='card' style='width:200px; '>
+                        <h2><strong>Summary</strong></h2>
+                        <p>Total Money won:<strong class='text-success'>$<c:out value='${winnings}'/></strong> </p>
+                        <p>Total Money wagered: $<c:out value='${totalBet}'/></p>
+                        <p>Current Balance: $<c:out value='${user.wallet.coffeebeans}'/></p>
                         </div>
-                            <div style='position:fixed;bottom:0;'>
-                                <p id='gameapi' style='font-size: 0px'>${id}</p>
-                            </div>
-                </body>
+                     </div>
 
-                </html>
+
+</body>
+</html>

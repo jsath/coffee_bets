@@ -101,10 +101,6 @@ public class BetController {
 		Bet checkBet = betServ.getOne(id);
 		Game checkGame = gameServ.getOne(checkBet.getGame().getId());
 		Wallet updatedWallet = checkBet.getUser().getWallet();
-		System.out.println(updatedWallet.getCoffeebeans());
-		System.out.println(checkBet.getPayout());
-		System.out.println(checkBet.getTeam());
-		System.out.println(checkGame.getWinner());
 		
 		String userTeam = checkBet.getTeam();
 		String gameWinner = checkGame.getWinner();
@@ -119,7 +115,6 @@ public class BetController {
 			checkBet.setStatus(1);
 			betServ.updateBet(checkBet);
 			
-			System.out.println(updatedWallet.getCoffeebeans());
 			return "redirect:/bets/activebets";
 		}else {
 			

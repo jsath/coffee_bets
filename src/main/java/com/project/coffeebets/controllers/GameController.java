@@ -124,10 +124,15 @@ public class GameController {
 		if(game.getWinner() == null) {
 			return "redirect:/bets/activebets";
 		}
+		String winner = game.getWinner();
+		if(winner.length() < 2) {
+			return "redirect:/bets/activebets";
+		}
 		List<Bet> bets = gameServ.getOne(game.getId()).getBets() ;
 		game.setBets(bets);
+		game.setIsClosed(1);
 		gameServ.updateGame(game);
-		return "redirect:/dashboard";
+		return "redirect:/bets/activebets";
 	}
 	
 	
