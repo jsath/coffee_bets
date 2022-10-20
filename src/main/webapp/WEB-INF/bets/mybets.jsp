@@ -49,7 +49,7 @@
 		<p class='text-center'><strong><c:out value='${bet.game.away}'/> </strong>  vs <c:out value='${bet.game.home}'/></p>
 	</c:if>
 
-<div style='display:flex; flex-direction:row;justify-content:space-between;padding:15px;"'>
+<div style='display:flex; flex-direction:row;justify-content:space-between;padding:15px;'>
 <p class='text-center'><strong>Stake</strong><br> <c:out value='${bet.amount}'/></p>
 
 <p class='text-center'><strong>Payout</strong><br><c:out value='${bet.payout}'/></p>
