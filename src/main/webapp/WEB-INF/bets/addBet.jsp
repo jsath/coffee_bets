@@ -4,6 +4,7 @@
             <%@ page isErrorPage="true" %>
                 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
+                <script src="/apiservice/bet.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                     crossorigin="anonymous"></script>
@@ -24,27 +25,30 @@
                 </head>
 
                 <body>
-                
-                <div id='tickerholder'>
-                                    <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-                
-                </div>
-                <br>
-                <br>
-                                
+
+                    <div id='tickerholder'>
+                        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker>
+                        <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
+                    </div>
+                    <br>
+                    <br>
+
 
                     <div class="nav">
                         <div class="nav-title">
-                        
-                        
+
+
 
                         </div>
                         <div class="Coffee-Title">
-           
-                           <a href='/dashboard'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+
+                            <a href='/dashboard'>
+                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
+                            </a>
                         </div>
                         <h4 class='text-center text-warning'>${user.wallet.coffeebeans}</h4>
-						
+
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
@@ -54,60 +58,61 @@
                                     Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
                                     Bets</button></a>
-                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
+                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User
+                                    Stats</button></a>
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
 
                         </div>
                         <div class="main-page">
-                        
-                        
-                                <h1>Add Bet</h1>
-
-                                <h2>Your Balance: $${wallet.coffeebeans}</h2>
-
-                                <div id="gamedetails">
-
-                                    <!-- Dynamically rendered with api -->
-
-                                </div>
 
 
+                            <h1>Add Bet</h1>
 
+                            <h2>Your Balance: $${wallet.coffeebeans}</h2>
 
-                                <form:form action="/bets/addbet" method="post" modelAttribute="bet">
+                            <div id="gamedetails">
 
-                                    <form:input path='apiId' type='hidden' value='${id}'></form:input>
-                                    <form:input path='game' type='hidden' value='${game.id}'></form:input>
-                                    <form:input path="user" type="hidden" value="${user_id}" />
+                                <!-- Dynamically rendered with api -->
 
-
-                                    <form:label path="amount">Amount: </form:label><br>
-                                    <form:input id='amount' type="number" path="amount" min='1'
-                                        max='${wallet.coffeebeans}' onchange="calculatePayout(${id})" /><br>
-                                    <form:errors path="amount" /><br>
-
-                                    <form:label path='Team'>Team: </form:label>
-                                    <form:select id='team' path="Team" onchange="calculatePayout(${id})">
-                                        <form:option id='home' value=''></form:option>
-                                        <form:option id='away' value=''></form:option>
-                                    </form:select><br>
-                                    <form:errors path="Team" /><br>
+                            </div>
 
 
 
 
-                                    <form:label path='payout'>Potential payout</form:label>
-                                    <form:input path='payout' id='stake' readonly='true' type="text" />
+                            <form:form action="/bets/addbet" method="post" modelAttribute="bet">
+
+                                <form:input path='apiId' type='hidden' value='${id}'></form:input>
+                                <form:input path='game' type='hidden' value='${game.id}'></form:input>
+                                <form:input path="user" type="hidden" value="${user_id}" />
 
 
-                                    <input type="submit" value="Add Bet" />
+                                <form:label path="amount">Amount: </form:label><br>
+                                <form:input id='amount' type="number" path="amount" min='1' max='${wallet.coffeebeans}'
+                                    onchange="calculatePayout(${id})" /><br>
+                                <form:errors path="amount" /><br>
 
-                                </form:form>
+                                <form:label path='Team'>Team: </form:label>
+                                <form:select id='team' path="Team" onchange="calculatePayout(${id})">
+                                    <form:option id='home' value=''></form:option>
+                                    <form:option id='away' value=''></form:option>
+                                </form:select><br>
+                                <form:errors path="Team" /><br>
+
+
+
+
+                                <form:label path='payout'>Potential payout</form:label>
+                                <form:input path='payout' id='stake' readonly='true' type="text" />
+
+
+                                <input type="submit" value="Add Bet" />
+
+                            </form:form>
 
                         </div>
-                            <div style='position:fixed;bottom:0;'>
-                                <p id='gameapi' style='font-size: 0px'>${id}</p>
-                            </div>
+                        <div style='position:fixed;bottom:0;'>
+                            <p id='gameapi' style='font-size: 0px'>${id}</p>
+                        </div>
                 </body>
 
                 </html>

@@ -112,12 +112,8 @@ public class LoginController {
 		}
 		Long id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(id);
-		Integer coffeeBet = betServ.TotalBet();
-		Integer coffeeProfit = betServ.TotalProfit();
 		model.addAttribute("recentBets", betServ.getDashBets());
 		model.addAttribute(user);
-		model.addAttribute(coffeeProfit);
-		model.addAttribute(coffeeBet);
 		return "dashboard.jsp";
 		
 	}

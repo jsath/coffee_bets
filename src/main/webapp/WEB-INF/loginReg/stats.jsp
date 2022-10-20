@@ -67,6 +67,27 @@
                         <p>Total Money wagered: $<c:out value='${totalBet}'/></p>
                         <p>Current Balance: $<c:out value='${user.wallet.coffeebeans}'/></p>
                         </div>
+             	           
+             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;'>
+                        
+                        <thead>
+                        <tr>
+                        <th>Wager</th>
+                        <th>Outcome</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var='bet' items='${user.bets}'>
+                        	<tr>
+                        	<c:if test='${bet.team == bet.game.winner}'>
+                        	<td><c:out value='+${bet.payout}'/></td>
+                        	<td><c:out value='${bet.user.userName}'/></td>
+                        	</c:if>
+                       		</tr>
+                        </c:forEach>
+                        </tbody>
+                    	</table>
                      </div>
 
 
