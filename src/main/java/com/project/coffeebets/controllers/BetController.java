@@ -2,6 +2,8 @@ package com.project.coffeebets.controllers;
 
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -45,8 +47,17 @@ public class BetController {
 	
 	@GetMapping("/leaderboard")
 	public String leaderboard(HttpSession session, Model model) {
+		
 		Long id = (Long) session.getAttribute("user_id");
 		model.addAttribute(userServ.getUserById(id));
+		
+		List <User> users = userServ.leaderboard();
+		model.addAttribute("users", users);
+		
+		Integer winnings = betServ.TotalProfit();
+		Integer wagered = betServ.TotalBet();
+		model.addAttribute("winnings", winnings);
+		model.addAttribute("wagered",wagered);
 		return "leaderboard.jsp";
 	}
 	

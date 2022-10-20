@@ -28,9 +28,9 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="create" class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Account</p>
+                <h4 class="text-center">Create Account</h4>
 
-                <form:form action="/register" method="post" modelAttribute="user" class="mx-1 mx-md-4">
+                <form:form action="/register" method="post" modelAttribute="user" class="mx-1 mx-md-4 text-center">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -68,13 +68,6 @@
                     </div>
                   </div>
 
-                 <!--  <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div> -->
-
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" value="Register" class="btn btn-primary btn-lg">Create</button>
                   </div>
@@ -83,7 +76,7 @@
 
               </div>
               <div  class="col"><!-- class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2" -->
-					<h1 class="mission" >Mission Statement</h1>
+					<h1>Mission Statement</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               
 

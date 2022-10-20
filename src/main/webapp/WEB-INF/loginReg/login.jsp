@@ -43,7 +43,7 @@
 
 
 <form:form action="/login" method="post" modelAttribute="loginUser">
-<div class="login"><h1 class="text-center">Login</h1></div> <br>
+<div><h1 class="text-center">Login</h1></div> <br>
 
   <!-- Email input -->
   <div class="form-outline mb-4">
@@ -65,7 +65,9 @@
 
 
   <!-- Submit button -->
-  <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4"/>
+  <div class='text-center' style='margin-bottom:15px;'>
+  <input type="submit" value="Sign in" class="btn-primary"/>
+  </div>
 
   <!-- Register buttons -->
   <div class="text-center">

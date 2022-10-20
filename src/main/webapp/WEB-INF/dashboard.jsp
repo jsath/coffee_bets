@@ -53,12 +53,6 @@
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
                             <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
                             <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
-
-                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
-                                    Bets</button></a>
-                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
-                                    Bets</button></a>
-                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
                             <a style='text-decoration:none;' href='/bets/leaderboard'><button class="btn">Leaderboard</button></a>
 
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>

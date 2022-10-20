@@ -64,22 +64,43 @@
                         
                         <thead>
                         <tr>
-                        <th>Total Profit</th>
+                        <th>Total Beans</th>
                         <th>User</th>
-
+                        
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var='bet' items=''>
+                        <c:forEach var='user' items='${users}'>
+                        
                         	<tr>
-                        	
-                        	<td>$<c:out value='${bet.payout}'/></td>
-                        	<td><c:out value='${bet.user.userName}'/></td>
+                        	<td><c:out value='${user.wallet.coffeebeans}'/></td>
+                        	<td><c:out value='${user.userName}'/></td>
   
                         
                        		</tr>
                         </c:forEach>
                         </tbody>
+                        </table>
+                        
+                        
+                        <table class='table table-dark text-center' style='width:400px; margin-left: auto; margin-right:auto;margin-top:45px;'>
+                        <thead>
+                        
+                        <tr>
+                        <th>Total Wagered on CoffeeBets</th>
+                        <th>Total Won on CoffeeBets</th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody>
+                        
+                        <tr>
+                        <td>$${wagered}</td>
+                        <td>$${winnings}</td>
+                        </tr>
+                        
+                        </tbody>
+                        
                         </table>
                         
                        

@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.coffeebets.models.Game;
 import com.project.coffeebets.models.Stadium;
+import com.project.coffeebets.models.User;
 import com.project.coffeebets.services.GameService;
 import com.project.coffeebets.services.StadiumService;
+import com.project.coffeebets.services.UserService;
 
 @Controller
 @RequestMapping("/stadiums")
@@ -27,9 +28,11 @@ public class StadiumController {
 	
 	public final GameService gameServ; 
 	public final StadiumService stadiumServ; 
-	public StadiumController(GameService gameServ,StadiumService stadiumServ) {
+	public final UserService userServ;
+	public StadiumController(GameService gameServ,StadiumService stadiumServ, UserService userServ) {
 		this.gameServ = gameServ;
 		this.stadiumServ = stadiumServ;
+		this.userServ = userServ;
 	}
 	
 	
@@ -68,9 +71,12 @@ public class StadiumController {
 	// Get All 
 	
 	@GetMapping("/all")
-	public String newNinja(@ModelAttribute("stadium") Stadium stadium, Model model) {
+	public String newNinja(@ModelAttribute("stadium") Stadium stadium, Model model, HttpSession session) {
+		Long id = (Long) session.getAttribute("user_id");
+		User user = userServ.getUserById(id);
 		List<Stadium> allStadiums = stadiumServ.allStadiums();
 		model.addAttribute("stadiums", allStadiums);
+		model.addAttribute(user);
 		return "/stadiums/stadiums.jsp";
 	}
 	
