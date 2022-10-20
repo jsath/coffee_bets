@@ -14,6 +14,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
@@ -21,23 +22,31 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="bets")
 public class Bet {
+	
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
  
-// @NotEmpty(message="Amount is required!")
-// @Size(min=3, max=128, message="Amount must not be null")
+
+@NotNull(message="Amount must not be null")
  private Integer amount;
  
  private Integer payout; 
  
- private Long apiId; 
+ private int status = 0;
+
+ public int getStatus() {
+	return status;
+}
+public void setStatus(int status) {
+	this.status = status;
+}
+private Long apiId; 
  
  @NotEmpty(message="Team is required!")
  @Size(min=3, max=128, message="Team must be between 3 and 128 characters")
  private String Team;
  
- private Integer multiplier; 
  
  @Column(updatable=false)
  private Date createdAt;
@@ -117,11 +126,6 @@ public class Bet {
 	public void setApiId(Long apiId) {
 		this.apiId = apiId;
 	}
-	public Integer getMultiplier() {
-		return multiplier;
-	}
-	public void setMultiplier(Integer multiplier) {
-		this.multiplier = multiplier;
-	}
+
 
 }

@@ -34,6 +34,13 @@ public class WalletService {
 			Optional<Wallet> potentialWallet = walletRepo.findById(id);
 			return potentialWallet.isPresent() ? potentialWallet.get() : null; 
 		}
+		
+		public Wallet getWalletByUserId(Long id) {
+			Optional<Wallet> potentialWallet = walletRepo.findByUserId(id);
+			return potentialWallet.isPresent() ? potentialWallet.get() : null; 
+		}
+		
+		
 			
 
 		public Wallet addWallet(Wallet wallet) {

@@ -18,6 +18,8 @@
 
 <h1>Add Bet</h1>
 
+<h2>Your Balance: $${wallet.coffeebeans}</h2>
+
 			<div id="gamedetails">
 			
 			<!-- Dynamically rendered with api -->
@@ -35,7 +37,7 @@
 
 
         <form:label path="amount">Amount: </form:label><br>
-        <form:input id='amount' type="number" path="amount" onchange="calculatePayout(${id})"/><br>
+        <form:input id='amount' type="number" path="amount" min='1' max='${wallet.coffeebeans}' onchange="calculatePayout(${id})"/><br>
         <form:errors path="amount" /><br>
        
        	<form:label path='Team'>Team: </form:label>

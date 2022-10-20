@@ -27,8 +27,17 @@ public class BetService {
 	}
 	
 	
+	
 	public List<Bet> getAll() {
 		return (List<Bet>) betRepo.findAll();
+	}
+	
+	public List<Bet> getUserBets(Long Id) {
+		return (List<Bet>) betRepo.getUserBets(Id);
+	}
+	
+	public List<Bet> getDashBets() {
+		return (List<Bet>) betRepo.getdashBets();
 	}
 		
 
@@ -48,6 +57,12 @@ public class BetService {
 		Optional<Bet> potentialBet = betRepo.findById(id); 
 		return potentialBet.isPresent() ? potentialBet.get() : null; 
 	}
+	
+	
+    public Integer getPayout(String team, Long apiId, Long user_id) {
+		Integer sum = betRepo.findBetsBy(team, apiId, user_id);
+		return sum;
+    }
 
 
 }
