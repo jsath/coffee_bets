@@ -39,6 +39,8 @@
                             <div class="side-bar">
                                 <img width='150' src="/imgs/coffee_dice_black.png">
                                 <a href="/register" style="text-decoration:none;"><button class="btn">Create Account</button></a>
+                                <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
+                                <a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button class="btn">Our GitHub</button></a>
                                 <a href="/login" style="text-decoration:none;"><button class="btn">Log In</button></a>
                             </div>
                             <div class="main-page">

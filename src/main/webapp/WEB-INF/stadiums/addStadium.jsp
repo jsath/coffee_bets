@@ -10,6 +10,10 @@
 <title>Add Stadium</title>
 </head>
 <body>
+    <div id='tickerholder'>
+        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
+</div>
 
 <div>
 
