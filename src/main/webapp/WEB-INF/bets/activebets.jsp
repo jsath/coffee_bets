@@ -17,6 +17,9 @@
 
 
 <h3 class='text-center' style='color:red;'>Balance: ${wallet.coffeebeans}</h3>
+<h5 class='text-center' style='color:red;'>Unsettled Bets: ${bets.size()}</h5>
+
+
 <a href='/dashboard' style='text-decoration:none;'><button>Home</button></a>
 
 

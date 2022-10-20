@@ -51,11 +51,7 @@
                                 <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
                                 <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
                                 <button class="btn">Tokens</button>
-                               	<a style='text-decoration:none;' href="/stadiums/all"><button class="btn">Stadiums</button></a>
-                                <button class="btn">All Bets</button>
-                                <button class="btn">Creators</button>
-                                <button class="btn">Settings</button>
-                                <a href="/logout" style="text-decoration:none;"><button class="btn">Log Out</button></a>
+
                             </div>
                             <div class="main-page">
                          
