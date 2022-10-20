@@ -75,9 +75,8 @@
                 </form:form>
 
               </div>
-              <div  class="col"><!-- class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2" -->
-					<h1>Mission Statement</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="col"><!-- class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2" -->
+					<p>Thank you for joining us at Coffee Bets. We are excited to share with you our Full Stack Java Project. We have created a fully functioning betting website using tools and techniques taught at Coding Dojo. This website was built purely for learning purposes and was an absolute blast. The API that we used was a free version and so some game details may not be 100% accurate. Please enjoy and feel free to pass on any feedback to the creators.</p>
               
 
               </div>
