@@ -26,7 +26,13 @@
 <head>
 <body class="p-3 mb-2 bg-gradient-success text-white">
 
+  <div id='tickerholder'>
+    <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
 
+</div>
+<br>
+<br>
+<br>
 
 <nav class="text-center" class="navbar navbar-light bg-light">
   <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
