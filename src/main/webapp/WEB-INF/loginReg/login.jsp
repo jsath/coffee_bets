@@ -28,9 +28,7 @@
 
 
 <nav class="text-center" class="navbar navbar-light bg-light">
-  <span class="text-center" class="navbar-text">
-    Coffee Bets
-  </span>
+  <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
 </nav> <br>
 
 <div class="container d-flex justify-content-evenly mt-3">

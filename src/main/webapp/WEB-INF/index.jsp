@@ -34,7 +34,7 @@
                                 <!-- <img src="/imgs/coffee_black_logo.png"> -->
                             </div>
                             <div class="Coffee-Title">
-                                <h1> Coffee Bets</h1>
+                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
 
                             </div>
                             <h1> </h1>

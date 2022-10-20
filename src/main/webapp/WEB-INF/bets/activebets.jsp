@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-            <%@ page isErrorPage="true" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,28 +15,36 @@
 <meta charset="UTF-8">
 <title>Active Bets</title>
 
-
-<h3 class='text-center' style='color:red;'>Balance: ${wallet.coffeebeans}</h3>
-<h5 class='text-center' style='color:red;'>Unsettled Bets: ${bets.size()}</h5>
-
-
-<a href='/dashboard' style='text-decoration:none;'><button>Home</button></a>
-
-
-
 </head>
 <body>
 
+	<div class="nav">
+		<div class="nav-title">
 
+		</div>
+		<div class="Coffee-Title">
+			<a href='/dashboard'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+		</div>
+		<h3 class='text-center' style='color:orange;'>Balance: ${wallet.coffeebeans} <br> Unsettled Bets: ${bets.size()}</h3>
+	</div>
+	<div class="main-body">
+		<div class="side-bar">
+			<a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+			<button class="btn">Scores</button>
+			<a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
+					Bets</button></a>
+			<a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
+					Bets</button></a>
+			<button class="btn">Tokens</button>
+			<a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
 
-
+		</div>
+		<div class="main-page">
 
 
 
 
 <c:forEach var='bet' items='${bets}'>
-
-
 
 
 <div class="card" style='width:600px;margin-left:auto;margin-right:auto;margin-top:50px;'>
@@ -116,12 +124,11 @@
 
 </div>
 
-
-
 </c:if>
 
-
 </c:forEach>
+
+</div>
 
 
 

@@ -36,7 +36,6 @@
 .nav-title img{
     height:200px;
     position: relative;
- 
 }
 body{
     /* background: rgb(82,131,162);
@@ -56,13 +55,12 @@ body{
     color: black;
     display:flex;
     justify-content: space-between;
-    padding:10px;
+    padding:15px;
     list-style-type:none;
     text-decoration: none;
     position: fixed;
     z-index: 3;
-   
-
+    height: 95px;
 
 
 }
@@ -204,3 +202,11 @@ body{
 .dot{
 	margin-left: 25px; 
 }
+
+
+.gamesByDate{
+    font:bolder;
+}
+
+
+

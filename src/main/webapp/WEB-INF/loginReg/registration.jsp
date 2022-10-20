@@ -15,12 +15,10 @@
 </head>
 	<body>
 	<nav class="text-center" class="navbar navbar-light bg-light">
-  <span class="text-center" class="navbar-text">
-    Coffee Bets
-  </span>
+    <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
 </nav> <br>
 
-			 		<section class="vh-100" ><!-- style="background-color: #eee;"> -->
+<section class="vh-100" ><!-- style="background-color: #eee;"> -->
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -98,35 +96,6 @@
 </section>
 	  <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-			 		<h1>Register</h1>
-			
-					<form:form action="/register" method="post" modelAttribute="user">
-				
-					<form:label path="userName">Username: </form:label><br>
-					<form:input path="userName"/><br>
-					<form:errors path="userName" class="text-danger"/><br>
-					        
-					<form:label path="email">Email: </form:label><br>
-					<form:input path="email"/><br>
-					<form:errors path="email" class="text-danger"/><br>
-					        
-					<form:label path="password">Password: </form:label><br>
-					<form:input type="password" path="password"/><br>
-					<form:errors path="password" class="text-danger"/><br>
-					        
-					<form:label path="confirm">Confirm Password: </form:label><br>
-					<form:input type="password" path="confirm"/><br>
-					<form:errors path="confirm" class="text-danger"/><br>
-					        
-					       
-					<input type="submit" value="Register" class="btn btn-primary"/>
-				
-					</form:form>
-					<a href="/login">Login</a>
-				</div>
-			</div>
-		</div>
 
 	</body>
 </html>

@@ -18,13 +18,31 @@
 
 </head>
 <body>
+	<div class="nav">
+
+		<div class="Coffee-Title">
+			<a href='/dashboard'><h1 class="text-center"><img width='400' src='/imgs/bets_clear.png'></h1></a>
+		</div>
+	</div>
+	<div class="main-body">
+		<div class="side-bar">
+			<a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+			<button class="btn">Scores</button>
+			<a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
+					Bets</button></a>
+			<a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
+					Bets</button></a>
+			<button class="btn">Tokens</button>
+			<a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
+
+		</div>
+		<div class="main-page">
 
 
-<div class='card'>
 
-
-
+<div class="betholder" style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px">
 <c:forEach var='bet' items='${user.bets}'>
+<div class='card' style="width:250px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
 <p>Amount: <c:out value='${bet.amount}'/></p>
 <p>Potential Payout <c:out value='${bet.payout}'/> </p>
 <p>Team <c:out value='${bet.team}'/> </p>
@@ -32,8 +50,14 @@
 <p>Away: <c:out value='${bet.game.away}'/> </p>
 
 <p>Home: <c:out value='${bet.game.home}'/> </p>
+</div>
 
 </c:forEach>
+
+</div>
+
+
+
 
 
 </div>
