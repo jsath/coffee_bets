@@ -4,7 +4,8 @@
             <%@ page isErrorPage="true" %>
                 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
-                <script src="/apiservice/testing.js"></script>
+                <script src="/apiservice/ticker.js"></script>
+                <script src="/apiservice/games.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -38,6 +39,7 @@
                             </div>
                             <div class="Coffee-Title">
                                 <h1>Coffee Bets</h1>
+                           		
 
                             </div>
                             <h1> </h1>
@@ -46,20 +48,63 @@
                             <div class="side-bar">
                                 <img src="/imgs/coffee_black_logo.png">
                                 <button class="btn">Scores</button>
-                                <button class="btn">Place Bets</button>
-                                <button class="btn">Your Bets</button>
+                                <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
+                                <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
                                 <button class="btn">Tokens</button>
-                                <button class="btn">Stadiums</button>
-                                <button class="btn">All Bets</button>
-                                <button class="btn">Creators</button>
-                                <button class="btn">Settings</button>
-                                <a href="/logout" style="text-decoration:none;"><button class="btn">Log Out</button></a>
+
                             </div>
                             <div class="main-page">
+                         
+                         <div id='live'>
+                         
+                         <div style='display:none;' id='liveYes'>
+                         
+                         <!-- IMAGE IS HOLDING A PROPER ONLINE RED BUTTON -->
+                         <img src='/imgs/on.jpg'>
+                         
+                         </div>
+                         
+                         <div style='display:none;' id='liveNo'>
+                         
+                         <!-- IMAGE IS HOLDING A PROPER OFFLINE RED BUTTON -->
+                         <img src='/imgs/off.jpg'>
+                         
+                         </div>
+                         
+                         </div>
+                         
+                         
+                            <div class="date-selector">
+                            	<input type="date" id="dateInput"/>
+                            </div>
+                            
+                            <div id="games">
+                            
+                            </div>
+                            
+                            <div class='card'>
+                            <h1>Wallet balance data</h1>
+                            <h1>$${user.wallet.coffeebeans}</h1>
+                            </div>
+                            
+                      
+                  
+                            
+                            
 
-                                <rssapp-magazine id="0b6SDhsyDBvZ3sek"></rssapp-magazine><script src="https://widget.rss.app/v1/magazine.js" type="text/javascript" async></script>
                         </div>
                     </div>
                 </body>
+                <script>
+                var date = new Date();
+                console.log("hi there! local time -", date);
+           
+                var month = date.getMonth() + 1; 
+                var localDate = date.getFullYear() + "-" + month + "-" + date.getDate();
+                document.getElementById('dateInput').value = localDate;
+               
+          
+                </script>
+                
 
                 </html>
