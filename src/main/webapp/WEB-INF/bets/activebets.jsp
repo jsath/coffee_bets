@@ -106,15 +106,17 @@
 	
 		<form:input type='hidden' path="stadium" value='${bet.game.stadium.id}'/><br>
 		
-		<form:input type='hidden' path="isClosed" value='1'/><br>
+		<form:input type='hidden' path="isClosed" value='0'/><br>
 	</div>
 
-        <input type="submit" value="Verify Data" class="btn btn-primary"/>
+        <button id='verifying' type="submit" value="Verify Data" class="btn btn-primary">Verify Data</button>
 </form:form>
 
 <p>If game is over, and you can't claim/close ticket, please check for scores then verify data</p>
 
 </div>
+
+
 
 </c:if>
 
