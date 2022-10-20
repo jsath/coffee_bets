@@ -20,9 +20,36 @@ span{
 }
 
 nav{
+
+    background: rgb(0,0,0);	
+}
+
+.login{
+	 font-family: 'Brush Script MT', cursive;
+	
+	 font-size: 50px;
+    margin: 10px;
+}
+
+h1{
+	font-size: 50px;
+    margin: 10px;
+}
+
+.create{
+font-family: 'Brush Script MT', cursive;
+ font-size: 50px;
+    margin: 10px;
+}
+
+.mission{
+font-family: 'Brush Script MT', cursive;
+}
+=======
 background: rgb(0,0,0);
 margin: 1px;  	
 }
+
 
 
 
