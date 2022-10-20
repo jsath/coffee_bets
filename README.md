@@ -57,6 +57,8 @@
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Donations
+- [ ] Loans for beans 
 - [ ] P2P transactions
 - [ ] Multi Sport Betting
 - [ ] Fantasy Sports
