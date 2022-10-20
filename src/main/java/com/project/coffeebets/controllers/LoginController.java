@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.project.coffeebets.models.Game;
@@ -111,20 +112,35 @@ public class LoginController {
 		}
 		Long id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(id);
+		Integer coffeeBet = betServ.TotalBet();
+		Integer coffeeProfit = betServ.TotalProfit();
 		model.addAttribute("recentBets", betServ.getDashBets());
 		model.addAttribute(user);
+		model.addAttribute(coffeeProfit);
+		model.addAttribute(coffeeBet);
 		return "dashboard.jsp";
 		
 	}
-	
-	
-	
+
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 	 
 		// Set userId to null and redirect to login/register page
 		session.setAttribute("user_id", null);
 	    return "redirect:/";
+	}
+	
+	@GetMapping("user/stats/{id}")
+	public String statistics(@PathVariable("id") Long id, Model model, HttpSession session){
+		Integer winnings = betServ.userProfit(id);
+		Integer totalBet = betServ.userTotalBet(id);
+		model.addAttribute("winnings", winnings);
+		model.addAttribute("totalBet", totalBet);
+		Long user_id = (Long) session.getAttribute("user_id");
+		User user = userServ.getUserById(user_id);
+		model.addAttribute(user);
+		return "/loginReg/stats.jsp";
+		
 	}
 
 }

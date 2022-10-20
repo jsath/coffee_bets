@@ -26,8 +26,28 @@ public interface BetRepository extends CrudRepository<Bet, Long> {
 	 Iterable<Bet> getUserBets(@Param("user_id") Long user_id);
 	 
 	 
-	 @Query(value = "SELECT * FROM bets WHERE status = 1 ORDER BY created_at desc LIMIT 10", nativeQuery=true)
+	 @Query(value = "SELECT * FROM bets WHERE status = 1 and payout > 200 ORDER BY created_at desc LIMIT 10", nativeQuery=true)
 	 Iterable<Bet> getdashBets();
+	 
+	 
+	 @Query(value = "SELECT SUM(Payout) FROM bets INNER JOIN games ON bets.game_id=games.id where team = games.winner and is_closed = 1 and user_id = ?1", nativeQuery=true)
+	 Integer userProfit(@Param("user_id")Long user_id);
+	 
+
+	 @Query(value = "SELECT SUM(amount) FROM bets where user_id = ?1", nativeQuery=true)
+	 Integer userTotalBet(@Param("user_id")Long user_id);
+	 
+	 @Query(value = "SELECT SUM(amount) FROM bets", nativeQuery=true)
+	 Integer totalBet();
+	 
+	 @Query(value = "SELECT SUM(payout) FROM bets INNER JOIN games ON bets.game_id=games.id where team = games.winner and is_closed = 1", nativeQuery=true)
+	 Integer totalProfit();
+
+	 
+
+
+	 
+	 
 
 }
 
