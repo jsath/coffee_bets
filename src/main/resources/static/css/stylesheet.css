@@ -37,6 +37,11 @@
     height:200px;
     position: relative;
 }
+
+.Coffee-Title:hoover{
+	box-shadow: F89917;
+    transform:scale(1.15);
+}
 body{
     /* background: rgb(82,131,162);
     background: linear-gradient(0deg, rgba(82,131,162,1) 0%, rgba(0,0,0,1) 70%);
@@ -203,10 +208,18 @@ body{
 	margin-left: 25px; 
 }
 
-
-.gamesByDate{
-    font:bolder;
+.card-hover:hover{
+    box-shadow: F89917;
+    transform:scale(1.15);
 }
+
+
+.btn:hover{
+	box-shadow: F89917;
+    transform:scale(1.15);
+	
+}
+
 
 
 
