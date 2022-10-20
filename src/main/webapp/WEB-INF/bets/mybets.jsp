@@ -19,7 +19,6 @@
 </head>
 <body>
 	<div class="nav">
-
 		<div class="Coffee-Title">
 			<a href='/dashboard'><h1 class="text-center"><img width='400' src='/imgs/bets_clear.png'></h1></a>
 		</div>
@@ -42,14 +41,33 @@
 
 <div class="betholder" style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px">
 <c:forEach var='bet' items='${user.bets}'>
-<div class='card' style="width:250px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
-<p>Amount: <c:out value='${bet.amount}'/></p>
-<p>Potential Payout <c:out value='${bet.payout}'/> </p>
-<p>Team <c:out value='${bet.team}'/> </p>
+<div class='card card-hover' style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
+	<c:if test='${bet.team == bet.game.home}'>
+		<p class='text-center'><c:out value='${bet.game.away}'/>   vs <strong><c:out value='${bet.game.home}'/></strong></p>
+	</c:if>
+	<c:if test='${bet.team == bet.game.away}'>
+		<p class='text-center'><strong><c:out value='${bet.game.away}'/> </strong>  vs <c:out value='${bet.game.home}'/></p>
+	</c:if>
 
-<p>Away: <c:out value='${bet.game.away}'/> </p>
+<div style='display:flex; flex-direction:row;justify-content:space-between;padding:15px;'>
+<p class='text-center'><strong>Stake</strong><br> <c:out value='${bet.amount}'/></p>
 
-<p>Home: <c:out value='${bet.game.home}'/> </p>
+<p class='text-center'><strong>Payout</strong><br><c:out value='${bet.payout}'/></p>
+	<c:if test='${bet.game.isClosed == 1 }'>
+
+
+		<c:if test='${bet.team == bet.game.winner }'>
+
+			<p class='text-center text-success'><br><strong>+</strong><c:out value='${bet.payout}'/></p>
+		</c:if>
+
+		<c:if test='${bet.team != bet.game.winner }'>
+			<p class='text-center text-danger'><br><strong>-<c:out value='${bet.amount}'/></strong></p>
+		</c:if>
+
+
+	</c:if>
+</div>
 </div>
 
 </c:forEach>
@@ -59,6 +77,8 @@
 
 
 
+
+</div>
 
 </div>
 
