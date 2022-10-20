@@ -106,7 +106,7 @@
 <c:if test='${bet.game.winner == null}'>
 
 
-<button class='btn btn-secondary' onclick='payDay(${bet.apiId})'>Check for scores</button>
+<button class='btn btn-secondary' onclick='payDay(${bet.apiId})'>Check Status</button>
 
 
 <form:form action="/games/edit/${bet.game.id}" method="post" modelAttribute="game">
