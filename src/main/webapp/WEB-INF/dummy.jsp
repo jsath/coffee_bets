@@ -31,37 +31,41 @@
 
                 <p class="create" class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Account</p>
 
-                <form class="mx-1 mx-md-4">
+                <form:form action="/register" method="post" modelAttribute="user" class="mx-1 mx-md-4">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
+                      <form:input path="userName" type="text" id="form3Example1c" class="form-control" />
+                      <form:label path="userName" class="form-label" for="form3Example1c">Your Name</form:label>
+                      <form:errors path="userName" class="text-danger"/><br>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" />
-                      <label class="form-label" for="form3Example3c">Your Email</label>
+                      <form:input path="email"  type="email" id="form3Example3c" class="form-control" />
+                      <form:label path="email" class="form-label" for="form3Example3c">Your Email</form:label>
+                      <form:errors path="email" class="text-danger"/><br>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4c" class="form-control" />
-                      <label class="form-label" for="form3Example4c">Password</label>
+                      <form:input path="password" type="password" id="form3Example4c" class="form-control" />
+                      <form:label path="password" class="form-label" for="form3Example4c">Password</form:label>
+                      <form:errors path="password" class="text-danger"/><br>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" />
-                      <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                      <form:input path="confirm" type="password" id="form3Example4cd" class="form-control" />
+                      <form:label path="confirm" class="form-label" for="form3Example4cd">Confirm Password</form:label>
+                      <form:errors path="confirm" class="text-danger"/><br>
                     </div>
                   </div>
 
@@ -73,10 +77,10 @@
                   </div> -->
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Create</button>
+                    <button type="submit" value="Register" class="btn btn-primary btn-lg">Create</button>
                   </div>
 
-                </form>
+                </form:form>
 
               </div>
               <div  class="col"><!-- class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2" -->

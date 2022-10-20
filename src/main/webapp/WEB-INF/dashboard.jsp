@@ -49,10 +49,11 @@
                                 <button class="btn">Place Bets</button>
                                 <button class="btn">Your Bets</button>
                                 <button class="btn">Tokens</button>
-                                <button class="btn">Stadiums</button>
+                                <button  class="btn">Stadiums</button>
                                 <button class="btn">All Bets</button>
                                 <button class="btn">Creators</button>
                                 <button class="btn">Settings</button>
+                                <a href="/stadiums"><button class="btn">Stadiums</button></a>
                                 <a href="/logout"><button class="btn">Log Out</button></a>
                             </div>
                             <div class="main-page">
