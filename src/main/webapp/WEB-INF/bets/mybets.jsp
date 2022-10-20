@@ -56,7 +56,6 @@
                     <div class="main-body">
                         <div class="side-bar">
                             <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
-                            <button class="btn">Scores</button>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
                                     Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
