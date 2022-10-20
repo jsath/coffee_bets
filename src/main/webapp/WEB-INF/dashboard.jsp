@@ -75,13 +75,13 @@
                         
                         
                         
-                        <table class='table table-dark'>
+                        <table class='table table-dark' style='width:400px; margin-left: auto; margin-right:auto;'>
                         
                         <thead>
                         <tr>
-                        <th>Recent Winners</th>
-                        <th><c:out value='${coffeeBet}'/> Bet all time</th>
-                        <th><c:out value='${coffeeProfit}'/> Beans have been won so far!</th>
+                        <th>Recent Payouts</th>
+                        <th>User</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -90,7 +90,7 @@
                         	
                         	<td>$<c:out value='${bet.payout}'/></td>
                         	<td><c:out value='${bet.user.userName}'/></td>
-                        	<td><c:out value='${bet.team}'/></td>
+  
                         
                        		</tr>
                         </c:forEach>
