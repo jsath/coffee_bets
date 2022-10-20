@@ -1,5 +1,7 @@
 package com.project.cofeebets.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -43,34 +45,36 @@ public class StadiumController {
 	public String add(@Valid @ModelAttribute("stadium") Stadium stadium, BindingResult result,Long id) {
 		
 		if(result.hasErrors()) {
-			return "/stadiums/addstadium.jsp";
+			System.out.println(stadium.getCapacity());
+			return "/stadiums/addStadium.jsp";
 		}else {
 			stadiumServ.addStadium(stadium);
 			return "redirect:/dashboard";
 		}
 	}
 	
-		
-	
-	// Get All 
-	
+	// Get One
 	
 	@GetMapping("/view/{id}")
 	public String view(@PathVariable("id") Long id, Model model, HttpSession session) {
-		if(session.getAttribute("user_id") == null) {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") == null) {
+//			return "redirect:/";
+//		}
 		Stadium stadium = stadiumServ.getOne(id);
-		Game game = gameServ.getGameById((Long) session.getAttribute("game_id"));
 		model.addAttribute("stadium", stadium);
-		model.addAttribute("user_id", session.getAttribute("user_id"));
-		return "view.jsp"; 
+		return "/stadiums/stadium.jsp"; 
 	}
 	
+	// Get All 
 	
+	@GetMapping("/all")
+	public String newNinja(@ModelAttribute("stadium") Stadium stadium, Model model) {
+		List<Stadium> allStadiums = stadiumServ.allStadiums();
+		model.addAttribute("stadiums", allStadiums);
+		return "/stadiums/stadiums.jsp";
+	}
 	
 	//update
-	
 	
 	@GetMapping("/edit/{id}")
 	public String viewEdit(@PathVariable("id") Long id, Model model, HttpSession session) {

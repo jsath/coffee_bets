@@ -12,5 +12,6 @@ import com.project.cofeebets.models.Wallet;
 @Repository
 public interface WalletRepository extends CrudRepository<Wallet, Long> {
 	Optional<Wallet> findById(String name);
+	Optional<Wallet> findByUserId(Long id);
 
 }

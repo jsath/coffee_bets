@@ -80,6 +80,11 @@
         <artifactId>jquery</artifactId>
         <version>3.6.0</version>
     </dependency>
+    
+    <!--Api Dependencies-->
+    
+	
+	
     </dependencies>
 
 	<build>

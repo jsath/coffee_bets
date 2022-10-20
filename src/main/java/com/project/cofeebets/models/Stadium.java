@@ -13,8 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,13 +26,19 @@ public class Stadium {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotEmpty(message="Address is required!")
-    @Size(min=3, max=128, message="Address must be between 3 and 128 characters")
-    private String address;
+	@Column(name="location")
+    private String location;
     
-    @NotEmpty(message="Name is required!")
-    @Size(min=8, max=128, message="Name must be between 8 and 128 characters")
-    private String name;
+	@Column(name="stadiumName")
+    private String stadiumName;
+    
+	@Column(name="imgFileName")
+    private String imgFileName;
+    
+	@Column(name="capacity")
+    private Integer capacity; 
+    
+    private String teamName;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -55,20 +60,53 @@ public class Stadium {
 		this.id = id;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getCapacity() {
+		return capacity;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getStadiumName() {
+		return stadiumName;
+	}
+
+	public void setStadiumName(String stadiumName) {
+		this.stadiumName = stadiumName;
+	}
+	
+	public String getImgFileName() {
+		return imgFileName;
+	}
+
+	public void setImgFileName(String imgFileName) {
+		this.imgFileName = imgFileName;
+	}
+
+
+	public String getTeamName() {
+		return teamName;
+	}
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+
+	public List<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Game> games) {
+		this.games = games;
 	}
 
 	public Date getCreatedAt() {
@@ -87,13 +125,6 @@ public class Stadium {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Game> getGmaes() {
-		return games;
-	}
-
-	public void setGmaes(List<Game> gmaes) {
-		this.games = gmaes;
-	}
 
 	 @PrePersist 
 	    protected void onCreate() {

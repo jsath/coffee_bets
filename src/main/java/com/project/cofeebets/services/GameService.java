@@ -34,6 +34,12 @@ public class GameService {
 		Optional<Game> potentialGame = gameRepo.findById(id);
 		return potentialGame.isPresent() ? potentialGame.get() : null; 
 	}
+	
+	public Game getGameByApiId(Long id) {
+		Optional<Game> potentialGame = gameRepo.findByApiId(id);
+		return potentialGame.isPresent() ? potentialGame.get() : null; 
+	}
+		
 		
 
 	public Game addGame(Game game) {

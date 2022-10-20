@@ -18,33 +18,15 @@
 
 <form:form action="/games/addgame" method="post" modelAttribute="game">
 
-        <form:label path="homeTeam">Home Team: </form:label><br>
-        <form:input  path="homeTeam"/><br>
-        <form:errors path="homeTeam" /><br>
+        <form:label path="stadium">Stadium: </form:label><br>
+        <form:input type="number" path="stadium"/><br>
+        <form:errors path="stadium" /><br>
         
-        <form:label path="awayTeam">Away Team: </form:label><br>
-        <form:input  path="awayTeam"/><br>
-        <form:errors path="awayTeam" /><br>
+         <form:label path="apiId">Stadium: </form:label><br>
+        <form:input type="apiId" path="apiId"/><br>
+        <form:errors path="apiId" /><br>
         
-        <form:label path="homeTeamScore">Home Team Score: </form:label><br>
-        <form:input  path="homeTeamScore"/><br>
-        <form:errors path="homeTeamScore" /><br>
         
-        <form:label path="awayTeamScore">Away Team Score: </form:label><br>
-        <form:input  path="awayTeamScore"/><br>
-        <form:errors path="awayTeamScore" /><br>
-        
-        <form:label path="homeTeamOdds">Home Team Odds: </form:label><br>
-        <form:input  path="homeTeamOdds"/><br>
-        <form:errors path="homeTeamOdds" /><br>
-        
-        <form:label path="awayTeamOdds">Away Team Odds: </form:label><br>
-        <form:input  path="awayTeamOdds"/><br>
-        <form:errors path="awayTeamOdds" /><br>
-        
-        <form:label path="gameDay">Game Day: </form:label><br>
-        <form:input type="date" path="gameDay"/><br>
-        <form:errors path="gameDay" /><br>
         
         
         

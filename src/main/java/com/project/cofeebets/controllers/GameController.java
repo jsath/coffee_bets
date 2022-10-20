@@ -1,5 +1,7 @@
 package com.project.cofeebets.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -14,10 +16,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.project.cofeebets.models.Bet;
 import com.project.cofeebets.models.Game;
+import com.project.cofeebets.models.Stadium;
 import com.project.cofeebets.models.User;
+import com.project.cofeebets.services.BetService;
 import com.project.cofeebets.services.GameService;
+import com.project.cofeebets.services.StadiumService;
 import com.project.cofeebets.services.UserService;
+import com.project.cofeebets.services.WalletService;
 
 @Controller
 @RequestMapping("/games")
@@ -25,9 +32,15 @@ public class GameController {
 	
 	public final UserService userServ; 
 	public final GameService gameServ; 
-	public GameController(UserService userServ,GameService gameServ) {
+	public final StadiumService stadiumServ; 
+	public final BetService betServ; 
+	public final WalletService walletServ;
+	public GameController(UserService userServ,GameService gameServ, StadiumService stadiumServ, BetService betServ, WalletService walletServ) {
 		this.userServ = userServ;
 		this.gameServ = gameServ;
+		this.stadiumServ = stadiumServ;
+		this.betServ = betServ; 
+		this.walletServ = walletServ; 
 	}
 	
 	
@@ -39,11 +52,27 @@ public class GameController {
 	}
 	
 	
+	@PostMapping("/addgame/{apiId}/{stadiumId}/{home}/{away}")
+	public String add(@PathVariable("apiId") Long apiId, @PathVariable("stadiumId") Long stadiumId, @PathVariable("home") String home,@PathVariable("away") String away, Game game) {
+		game.setApiId(apiId);
+		game.setStadium(stadiumServ.getOne(stadiumId));
+		game.setHome(home);
+		game.setAway(away);
+		if(gameServ.getGameByApiId(game.getApiId()) != null ){
+			return "redirect:/bets/addbet/" + game.getApiId();
+		}
+		else {
+			gameServ.addGame(game);
+			return "redirect:/bets/addbet/" + game.getApiId();
+		}
+	}
+	
 	@PostMapping("/addgame")
 	public String add(@Valid @ModelAttribute("game") Game game, BindingResult result,Long id) {
 		
 		if(result.hasErrors()) {
-			return "/games/addgame.jsp";
+			System.out.println(result);
+			return "/games/addGame.jsp";
 		}else {
 			gameServ.addGame(game);
 			return "redirect:/dashboard";
@@ -84,10 +113,19 @@ public class GameController {
 	
 	
 	@PutMapping("/edit/{id}")
-	public String edit(@Valid @ModelAttribute("game") Game game, BindingResult result) {
+	public String edit(@Valid @ModelAttribute("game") Game game, BindingResult result, HttpSession session) {
+		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()) {
-			return "editgame.jsp";
+			return "/bets/activebets.jsp";
 		}
+		if(gameServ.getGameById(game.getId()).getWinner() != null) {
+			return "redirect:/bets/activebets";
+		}
+		if(game.getWinner() == null) {
+			return "redirect:/bets/activebets";
+		}
+		List<Bet> bets = gameServ.getOne(game.getId()).getBets() ;
+		game.setBets(bets);
 		gameServ.updateGame(game);
 		return "redirect:/dashboard";
 	}
