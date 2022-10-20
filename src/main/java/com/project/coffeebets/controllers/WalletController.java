@@ -32,25 +32,7 @@ public class WalletController {
 	}
 	
 	
-	// Create 
-	
-	@GetMapping("/addwallet")
-	public String add(@ModelAttribute("wallet") Wallet wallet) {
-		return "/wallets/addWallet.jsp";
-	}
-	
-	
-	@PostMapping("/addwallet")
-	public String add(@Valid @ModelAttribute("wallet") Wallet wallet, BindingResult result,Long id) {
-		
-		if(result.hasErrors()) {
-			return "/wallets/addwallet.jsp";
-		}else {
-			walletServ.addWallet(wallet);
-			return "redirect:/dashboard";
-		}
-	}
-	
+	// Create 	
 		
 	
 	// Get All 

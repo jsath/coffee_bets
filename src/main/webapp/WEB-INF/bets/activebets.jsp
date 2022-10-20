@@ -48,7 +48,7 @@
 								<h1><img width='400' src='/imgs/bets_clear.png'></h1>
 							</a>
 						</div>
-						<h4 class='text-center' style='color: rbg(248,153,23);'>Balance ${user.wallet.coffeebeans}</h4>
+						<h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 
 					</div>
 					<div class="main-body">

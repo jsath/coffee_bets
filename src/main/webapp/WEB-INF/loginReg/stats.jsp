@@ -44,7 +44,7 @@
            
                            <a href='/dashboard'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
                         </div>
-                        <h4 class='text-center text-warning'>${user.wallet.coffeebeans}</h4>
+                        <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 						
                     </div>
                     <div class="main-body">
@@ -59,14 +59,17 @@
                         </div>
                         <div class="main-page">
                         
-                        <div class='card' style='width:200px; '>
+                        
+                        <div class='card text-center' style='width:200px;margin-left: auto; margin-right:auto;'>
+                        
                         <h2><strong>Summary</strong></h2>
+                        
                         <p>Total Money won:<strong class='text-success'>$<c:out value='${winnings}'/></strong> </p>
                         <p>Total Money wagered: $<c:out value='${totalBet}'/></p>
                         <p>Current Balance: $<c:out value='${user.wallet.coffeebeans}'/></p>
                         </div>
              	           
-             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;'>
+             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;margin-top:25px;'>
                         
                         <thead>
                         <tr>
