@@ -39,11 +39,15 @@
             <button class="btn">Settings</button>
             <button class="btn">Log Out</button>
         </div>
-        <div class="main-page">
-        <c:forEach var="stadium" items="${stadiums}">
-        	<a href="/stadiums/view/${stadium.id}"><c:out value="${stadium.stadiumName}"></c:out></a>
-        	<img src="${stadium.imgFileName}"/>
-        </c:forEach>
+        <div class="main-page">>
+       	<h1><c:out value="${stadium.stadiumName}"></c:out></h1>
+       	<img src="${stadium.imgFileName}"/>
+       	<p><c:out value="${stadium.location}"></c:out></p><br>
+       	<p><c:out value="${stadium.capacity}"></c:out></p><br>
+       	<p><c:out value="${stadium.teamName}"></c:out></p><br>
+       	<p><c:out value="${stadium.games}"></c:out></p><br>
+       	
+       	
         </div>
      </div>
      </body>

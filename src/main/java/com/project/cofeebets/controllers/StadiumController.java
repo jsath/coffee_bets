@@ -57,14 +57,12 @@ public class StadiumController {
 	
 	@GetMapping("/view/{id}")
 	public String view(@PathVariable("id") Long id, Model model, HttpSession session) {
-		if(session.getAttribute("user_id") == null) {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") == null) {
+//			return "redirect:/";
+//		}
 		Stadium stadium = stadiumServ.getOne(id);
-		Game game = gameServ.getGameById((Long) session.getAttribute("game_id"));
 		model.addAttribute("stadium", stadium);
-		model.addAttribute("user_id", session.getAttribute("user_id"));
-		return "/stadiums/stadiums.jsp"; 
+		return "/stadiums/stadium.jsp"; 
 	}
 	
 	// Get All 
