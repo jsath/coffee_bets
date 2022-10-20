@@ -6,6 +6,7 @@ package com.project.cofeebets.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,7 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -63,11 +64,10 @@ public class User{
     private Date updatedAt;
     
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="wallet_id")
-    private Wallet wallet; 
+    @OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private Wallet wallet;
     
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JoinTable(
         name = "bets", 
         joinColumns = @JoinColumn(name = "user_id"), 
@@ -75,7 +75,35 @@ public class User{
     )
     private List<Bet> bets;
   
-    public User() {}
+    public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Wallet getWallet() {
+		return wallet;
+	}
+
+	public void setWallet(Wallet wallet) {
+		this.wallet = wallet;
+	}
+
+	public List<Bet> getBets() {
+		return bets;
+	}
+
+	public void setBets(List<Bet> bets) {
+		this.bets = bets;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public User() {}
     
     @PrePersist 
     protected void onCreate() {

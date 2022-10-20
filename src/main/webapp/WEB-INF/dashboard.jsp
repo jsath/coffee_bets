@@ -39,6 +39,7 @@
                             </div>
                             <div class="Coffee-Title">
                                 <h1>Coffee Bets</h1>
+                           		
 
                             </div>
                             <h1> </h1>
@@ -47,10 +48,10 @@
                             <div class="side-bar">
                                 <img src="/imgs/coffee_black_logo.png">
                                 <button class="btn">Scores</button>
-                                <button class="btn">Place Bets</button>
-                                <button class="btn">Your Bets</button>
+                                <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
+                                <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
                                 <button class="btn">Tokens</button>
-                               <a href="/stadiums/all"><button class="btn">Stadiums</button></a>
+                               	<a style='text-decoration:none;' href="/stadiums/all"><button class="btn">Stadiums</button></a>
                                 <button class="btn">All Bets</button>
                                 <button class="btn">Creators</button>
                                 <button class="btn">Settings</button>
@@ -58,7 +59,23 @@
                             </div>
                             <div class="main-page">
                          
+                         <div id='live'>
                          
+                         <div style='display:none;' id='liveYes'>
+                         
+                         <!-- IMAGE IS HOLDING A PROPER ONLINE RED BUTTON -->
+                         <img src='/imgs/on.jpg'>
+                         
+                         </div>
+                         
+                         <div style='display:none;' id='liveNo'>
+                         
+                         <!-- IMAGE IS HOLDING A PROPER OFFLINE RED BUTTON -->
+                         <img src='/imgs/off.jpg'>
+                         
+                         </div>
+                         
+                         </div>
                          
                          
                             <div class="date-selector">
@@ -66,7 +83,16 @@
                             </div>
                             
                             <div id="games">
+                            
                             </div>
+                            
+                            <div class='card'>
+                            <h1>Wallet balance data</h1>
+                            <h1>$${user.wallet.coffeebeans}</h1>
+                            </div>
+                            
+                      
+                  
                             
                             
 
@@ -75,8 +101,13 @@
                 </body>
                 <script>
                 var date = new Date();
-                var currentDate = date.toISOString().slice(0,10);
-                document.getElementById('dateInput').value = currentDate;
+                console.log("hi there! local time -", date);
+           
+                var month = date.getMonth() + 1; 
+                var localDate = date.getFullYear() + "-" + month + "-" + date.getDate();
+                document.getElementById('dateInput').value = localDate;
+               
+          
                 </script>
                 
 

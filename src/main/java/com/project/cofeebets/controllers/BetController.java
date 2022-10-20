@@ -1,5 +1,7 @@
 package com.project.cofeebets.controllers;
 
+
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -17,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.project.cofeebets.models.Bet;
 import com.project.cofeebets.models.Game;
 import com.project.cofeebets.models.User;
+import com.project.cofeebets.models.Wallet;
 import com.project.cofeebets.services.BetService;
 import com.project.cofeebets.services.GameService;
 import com.project.cofeebets.services.UserService;
+import com.project.cofeebets.services.WalletService;
 
 
 
@@ -30,37 +34,102 @@ public class BetController {
 	public final UserService userServ; 
 	public final BetService betServ; 
 	public final GameService gameServ;
-	public BetController(UserService userServ,BetService betServ,GameService gameServ) {
+	public final WalletService walletServ; 
+	public BetController(UserService userServ,BetService betServ,GameService gameServ, WalletService walletServ) {
 		this.userServ = userServ;
 		this.betServ = betServ;
 		this.gameServ = gameServ;
+		this.walletServ = walletServ;
 	}
 	
 	
 	// Create 
 	
 	@GetMapping("/addbet/{id}")
-	public String add(@ModelAttribute("bet") Bet bet, @PathVariable("id") Long id, Model model) {
+	public String add(@ModelAttribute("bet") Bet bet, @PathVariable("id") Long id, Model model, HttpSession session) {
 		Game game = gameServ.getGameByApiId(id);
 		model.addAttribute("id", id);
 		model.addAttribute(game);
+		session.setAttribute("gameId", id);
+		Long user_id = (Long) session.getAttribute("user_id");
+		Wallet wallet = walletServ.getWalletByUserId(user_id);
+		model.addAttribute(wallet);
 		return "/bets/addBet.jsp";
 	}
 	
 	
 	@PostMapping("/addbet")
-	public String add(@Valid @ModelAttribute("bet") Bet bet, BindingResult result,Long id) {
+	public String add(@Valid @ModelAttribute("bet") Bet bet, BindingResult result, HttpSession session) {
 		if(result.hasErrors()) {
-			return "/bets/addbet.jsp";
+			return "redirect:/bets/addbet/" + session.getAttribute("gameId");
 		}else {
 			betServ.addBet(bet);
+			Wallet updatedWallet = walletServ.getWalletById(bet.getUser().getWallet().getId());
+			updatedWallet.setCoffeebeans(updatedWallet.getCoffeebeans() - bet.getAmount());
+			walletServ.updateWallet(updatedWallet);
+		
 			return "redirect:/dashboard";
 		}
 	}
 	
-		
 	
-	// Get All 
+	@GetMapping("/activebets")
+	public String activeBets(@ModelAttribute("game") Game game, HttpSession session, Model model) {
+		Long user_id = (Long) (session.getAttribute("user_id"));
+		User user = userServ.getUserById(user_id);
+		Wallet wallet = walletServ.getWalletByUserId(user_id);
+		model.addAttribute(user);
+		model.addAttribute(wallet);
+		model.addAttribute("bets", betServ.getUserBets(user_id));
+		return "bets/activebets.jsp";
+	}
+	
+	
+
+	@GetMapping("/mybets")
+	public String allBets(HttpSession session, Model model) {
+		Long user_id = (Long) (session.getAttribute("user_id"));
+		User user = userServ.getUserById(user_id);
+		model.addAttribute(user);
+		return "bets/mybets.jsp";
+	}
+	// Get All
+	
+	
+	@PutMapping("/close/bet/{id}")
+	public String close(@PathVariable("id") Long id) {
+		Bet checkBet = betServ.getOne(id);
+		Game checkGame = gameServ.getOne(checkBet.getGame().getId());
+		Wallet updatedWallet = checkBet.getUser().getWallet();
+		System.out.println(updatedWallet.getCoffeebeans());
+		System.out.println(checkBet.getPayout());
+		System.out.println(checkBet.getTeam());
+		System.out.println(checkGame.getWinner());
+		
+		String userTeam = checkBet.getTeam();
+		String gameWinner = checkGame.getWinner();
+
+		if(userTeam.contains(gameWinner)) {
+			
+			//Updating wallet with payout if user bet on winner
+			updatedWallet.setCoffeebeans(updatedWallet.getCoffeebeans() + checkBet.getPayout());
+			walletServ.updateWallet(updatedWallet);
+			
+			//closing status of bet
+			checkBet.setStatus(1);
+			betServ.updateBet(checkBet);
+			
+			System.out.println(updatedWallet.getCoffeebeans());
+			return "redirect:/bets/activebets";
+		}else {
+			
+			checkBet.setStatus(1);
+			betServ.updateBet(checkBet);
+			return "redirect:/bets/activebets";
+			
+		}
+		
+	}
 	
 	
 	@GetMapping("/view/{id}")
@@ -93,8 +162,9 @@ public class BetController {
 	
 	@PutMapping("/edit/{id}")
 	public String edit(@Valid @ModelAttribute("bet") Bet bet, BindingResult result) {
+		System.out.println(result);
 		if(result.hasErrors()) {
-			return "editbet.jsp";
+			return "/bets/activebets.jsp";
 		}
 		betServ.updateBet(bet);
 		return "redirect:/dashboard";

@@ -9,12 +9,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,10 +27,10 @@ public class Wallet {
     private Long id;
     
     @NotNull(message="Usd are required!")
-    private int usd;
+    private int usd=0;
     
     @NotNull(message="Coffee Beans are required!")
-    private int coffeebeans;
+    private int coffeebeans=10000;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -38,8 +38,9 @@ public class Wallet {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updatedAt;
     
-    @OneToMany(mappedBy="wallet", fetch = FetchType.LAZY)
-    private List<User> users;
+    @OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
 
 	public Wallet() {}
 
@@ -83,15 +84,17 @@ public class Wallet {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<User> getUsers() {
-		return users;
+	
+	
+	 public User getUser() {
+		return user;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	
-	 @PrePersist 
+
+	@PrePersist 
 	    protected void onCreate() {
 	    	this.createdAt = new Date();
 	    }
