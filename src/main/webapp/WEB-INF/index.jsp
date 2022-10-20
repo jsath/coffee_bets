@@ -41,7 +41,7 @@
                         </div>
                         <div class="main-body">
                             <div class="side-bar">
-                                <img src="/imgs/coffee_black_logo.png">
+                                  <img width='150' src="/imgs/coffee_dice_black.png">
                                 <a href="/register" style="text-decoration:none;"><button class="btn">Create Account</button></a>
                                 <a href="/login" style="text-decoration:none;"><button class="btn">Log In</button></a>
                             </div>
