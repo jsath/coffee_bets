@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+@import url('http://fonts.cdnfonts.com/css/bungee');
+
 *{
     margin:0;
     padding:0;
@@ -10,14 +13,10 @@ body{
     height:100vh; */
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(248,153,23,1) 0%, rgba(0,0,0,1) 59%);
+    font-family: Bungee;
 } 
 
-span{
-	 color:  rgba(248,153,23,1);
-    font-family: 'Brush Script MT', cursive;
-    font-size: 50px;
-    margin: 10px;
-}
+
 
 nav{
 
@@ -25,7 +24,6 @@ nav{
 }
 
 .login{
-	 font-family: 'Brush Script MT', cursive;
 	
 	 font-size: 50px;
     margin: 10px;
@@ -36,15 +34,6 @@ h1{
     margin: 10px;
 }
 
-.create{
-font-family: 'Brush Script MT', cursive;
- font-size: 50px;
-    margin: 10px;
-}
-
-.mission{
-font-family: 'Brush Script MT', cursive;
-}
 
 
 

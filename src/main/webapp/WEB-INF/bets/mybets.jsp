@@ -2,12 +2,8 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
             <%@ page isErrorPage="true" %>
-                <!DOCTYPE html>
-                <html>
-
-                <head>
+                            <head>
                     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-                    <link rel="stylesheet" href="/css/stylesheet.css">
                     <script src="/apiservice/ticker.js"></script>
                     <script src="/apiservice/games.js"></script>
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -19,6 +15,11 @@
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
                         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                         crossorigin="anonymous"></script>
+                    <link rel="stylesheet" href="/css/stylesheet.css">
+                <!DOCTYPE html>
+                <html>
+
+
                     <meta charset="UTF-8">
                     <title>My Bets</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
@@ -27,16 +28,21 @@
 
                 <body>
 
-                <div id='tickerholder'>
-                                    <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-                
-                </div>
+
+                    <div id='tickerholder'>
+                        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker>
+                        <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
+                    </div>
                     <br>
                     <br>
 
 
                     <div class="nav">
                         <div class="nav-title">
+
+
+
                         </div>
                         <div class="Coffee-Title">
 
@@ -44,17 +50,23 @@
                                 <h1><img width='400' src='/imgs/bets_clear.png'></h1>
                             </a>
                         </div>
-  					<h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
+                        <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
                             <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
-                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
-                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
-                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
-                            <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
+                            <button class="btn">Scores</button>
+                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
+                                    Bets</button></a>
+                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
+                                    Bets</button></a>
+                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User
+                                    Stats</button></a>
+                            <a style='text-decoration:none;' href='/bets/leaderboard'><button
+                                    class="btn">Leaderboard</button></a>
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
+
 
                         </div>
                         <div class="main-page">
@@ -63,10 +75,10 @@
 
 
                             <div class="betholder"
-                                style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px">
+                                style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px; margin-left: auto; margin-right:auto;">
                                 <c:forEach var='bet' items='${user.bets}'>
-                                    <div class='card card-hover bg-secondary text-white shadow-lg'
-                                        style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
+                                    <div class='card card-hover text-dark shadow-lg'
+                                        style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:25px;background-color: #8C92AC;height:195px;">
                                         <c:if test='${bet.team == bet.game.home}'>
                                             <p class='text-center'>
                                                 <c:out value='${bet.game.away}' /> vs <strong>
@@ -99,7 +111,7 @@
 
                                             <c:if test='${bet.team == bet.game.winner }'>
 
-                                                <p class='text-center text-success'><br><strong>+</strong>
+                                                <p class='text-center' style='color:#006400;'><br><strong>+</strong>
                                                     <c:out value='${bet.payout}' />
                                                 </p>
                                             </c:if>
@@ -129,7 +141,6 @@
                         </div>
 
                     </div>
-
                 </body>
 
                 </html>

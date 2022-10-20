@@ -42,6 +42,8 @@ public interface BetRepository extends CrudRepository<Bet, Long> {
 	 
 	 @Query(value = "SELECT SUM(payout) FROM bets INNER JOIN games ON bets.game_id=games.id where team = games.winner and is_closed = 1", nativeQuery=true)
 	 Integer totalProfit();
+	 
+	 
 
 	 
 

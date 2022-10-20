@@ -1,6 +1,7 @@
 package com.project.coffeebets.services;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -36,6 +37,12 @@ public class UserService {
 		String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
 		newUser.setPassword(hashed);
 		return userRepo.save(newUser); 
+	}
+	
+	public List<User> leaderboard(){
+		List <User> users = userRepo.leaderboard();
+		return users;
+		
 	}
 	
 	
