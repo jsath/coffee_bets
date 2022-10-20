@@ -2,9 +2,9 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
             <%@ page isErrorPage="true" %>
+            	<link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
                 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="/css/stylesheet.css">
-                <!--script src="/apiservice/ticker.js"></script-->
                 <script src="/apiservice/games.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -22,34 +22,33 @@
                     <meta charset="UTF-8">
                     <title>Dashboard</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
-                    <rssapp-ticker id="tufwi3dFkKc1sOoP"></rssapp-ticker>
-                    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-
                 </head>
-
                 <body>
-
-                    <!-- Updated Ticker populated with testing.js -->
-                    <!--
-                    <div class="main-box">
-                        <div class="ticker">
-                        </div>
-                    </div>
-                -->
+                
+                <div id='tickerholder'>
+                                    <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                
+                </div>
+                <br>
+                <br>
+                                
 
                     <div class="nav">
                         <div class="nav-title">
+                        
+                        
 
                         </div>
                         <div class="Coffee-Title">
+           
                            <a href='/dashboard'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
                         </div>
-                        <h4 class='text-center text-warning'>${user.wallet.coffeebeans}</h4>
+                        <h4 class='text-center' style='font-family: Bungee;'>Balance ${user.wallet.coffeebeans}</h4>
 						
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
-                            <img width='150' src="/imgs/coffee_dice_black.png">
+                            <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
                             <button class="btn">Scores</button>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
                                     Bets</button></a>
@@ -60,23 +59,45 @@
 
                         </div>
                         <div class="main-page">
+                        
+                        
 
-                            <div id='live'>
-                                <div style='display:block;' id='liveYes'>
-                                    <img height='50' src='/imgs/live.jpg'>
-                                </div>
-                            </div>
 
-                        <div class="gamesByDate text-center">
-
-                            <div class="date-selector">
+                        <div class="gamesByDate">
                                 <input type="date" id="dateInput" />
-                            </div>
                         </div>
 
-                        <div id="games">
+                        <div id="games" style='display:flex; flex-direction: row;margin-top: 25px;flex-wrap:wrap-reverse;'>
 
                         </div>
+                        
+                        <rssapp-carousel id="Xx5P2L2o3BBM2Iw7"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
+                        
+                        
+                        
+                        <table class='table table-dark'>
+                        
+                        <thead>
+                        <tr>
+                        <th>Recent Winners</th>
+                        <th><c:out value='${coffeeBet}'/> Bet all time</th>
+                        <th><c:out value='${coffeeProfit}'/> Beans have been won so far!</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var='bet' items='${recentBets}'>
+                        	<tr>
+                        	
+                        	<td>$<c:out value='${bet.payout}'/></td>
+                        	<td><c:out value='${bet.user.userName}'/></td>
+                        	<td><c:out value='${bet.team}'/></td>
+                        
+                       		</tr>
+                        </c:forEach>
+                        </tbody>
+                        </table>
+                        
+                        
 
                      
                     </div>

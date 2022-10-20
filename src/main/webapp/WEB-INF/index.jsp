@@ -14,21 +14,17 @@
                 <head>
                     <meta charset="UTF-8">
                     <title>Coffee Bets</title>
+                    <link rel='icon' href='/imgs/coffee_icon.ico'>
+                    
                 </head>
 
                 <body>
-                     <div class="main-box">
+                    <div class="main-box">
                         <div class="ticker">
-    					<div class="row">
-        					<div class="col-md-12">
-            					<div class="d-flex justify-content-between align-items-center">
-                					<div id="tickerholder" class="d-flex flex-row flex-grow-1 flex-fill align-items-center py-2 text-white px-1 news"></div>
-            						</div>
-       							 </div>
-   							 </div>
-						
+                            <rssapp-ticker id="tufwi3dFkKc1sOoP"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
 						</div>
-            		</div>
+            	        </div>
                         <div class="nav">
                             <div class="nav-title">
                                 <!-- <img src="/imgs/coffee_black_logo.png"> -->
@@ -41,13 +37,13 @@
                         </div>
                         <div class="main-body">
                             <div class="side-bar">
-                                  <img width='150' src="/imgs/coffee_dice_black.png">
+                                <img width='150' src="/imgs/coffee_dice_black.png">
                                 <a href="/register" style="text-decoration:none;"><button class="btn">Create Account</button></a>
                                 <a href="/login" style="text-decoration:none;"><button class="btn">Log In</button></a>
                             </div>
                             <div class="main-page">
 
-                                <rssapp-wall id="0b6SDhsyDBvZ3sek"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+                                <rssapp-wall id="tufwi3dFkKc1sOoP"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
                         </div>
                     </div>
                 </body>

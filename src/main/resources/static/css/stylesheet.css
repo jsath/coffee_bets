@@ -25,7 +25,6 @@
 	width: 100%; 
 }
 
-
 .Coffee-Title h1{
     color: F89917;
     font-family: 'Brush Script MT', cursive;
@@ -81,41 +80,19 @@ body{
 
 
 }
-/* .nav-links{
-    display:flex;
-    justify-content: flex-end;
-    margin:10px;
-    padding:10px;
-    background-color: black;
-    color: white;
-    list-style-type:none;
-    text-decoration: none;
-    font-style: italic;
 
-} */
 .btn{
     display:flex;
     justify-content: flex-end;
     margin:10px;
-    padding:10px;
     background-color: F89917;
     color: black;
     list-style-type:none;
     text-decoration: none;
     font-family: 'Brush Script MT', cursive;
-    width: fit-content;
+    width: 200px;
 }
-/* .a{
-    display:flex;
-    justify-content: space-between;
-    margin:10px;
-    padding:10px;
-    background-color: 5283A2;
-    color: white;
-    list-style-type:none;
-    text-decoration: none;
-	font-style: italic;
-} */
+
 .li{
     list-style-type:none;
     text-decoration: none;
@@ -125,11 +102,10 @@ body{
     height: 100vh;
 }
 .main-page{
-
     height: 100%;
     width: 80%;
     margin: auto;
-    margin-top: 250px;
+    margin-top: 125px;
 }
 
 .side-bar{
@@ -183,7 +159,7 @@ body{
 
 #tickerholder{
 	height:28px; 
-	width: 100%; 
+	width:100%;
     position: fixed;
     z-index: 4;
     top: 0px;
@@ -208,16 +184,32 @@ body{
 	margin-left: 25px; 
 }
 
+
 .card-hover:hover{
     box-shadow: F89917;
     transform:scale(1.15);
 }
 
-
 .btn:hover{
 	box-shadow: F89917;
     transform:scale(1.15);
-	
+}
+
+.gamesByDate{
+	width: fit-content;
+	margin-left:auto;
+}
+
+
+input[type="date"] { 
+    background: transparent;
+    color: white;
+    font-weight: bolder;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    color: white;
 }
 
 

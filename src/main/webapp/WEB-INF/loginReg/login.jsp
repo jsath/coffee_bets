@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Test</title>
+<link rel='icon' href='/imgs/coffee_icon.ico'>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
 <link rel="stylesheet" href="/css/stylesheet2.css">
