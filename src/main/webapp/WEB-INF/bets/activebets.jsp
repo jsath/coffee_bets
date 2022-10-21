@@ -20,7 +20,7 @@
 
 
                     <meta charset="UTF-8">
-                    <title>My Bets</title>
+                    <title>Unsettled Bets</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
 
                 </head>
@@ -46,7 +46,7 @@
                         <div class="Coffee-Title">
 
                             <a href='/dashboard'>
-                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
+                                <h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1>
                             </a>
                         </div>
                         <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
-                            <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+                            <a href='/dashboard'><img class='card-hover' width='150' src="/imgs/coffee_dice_black.png"></a>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
                             <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
@@ -64,14 +64,23 @@
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
                         </div>
                         <div class="main-page">
+                        
+                        
 
 
+							
+							
+							<div style='width:530px;margin-left: auto;'>
 
+  									<div class="p-2 justify-content end"><a style='width:fit-content;' href='/dashboard'><button class='text-center card-hover btn-primary'>Back</button></a></div>
+
+							</div>
 							<c:forEach var='bet' items='${bets}'>
 
 
 								<div class="card text-center"
 									style='width:600px;margin-left:auto;margin-right:auto;margin-top:50px;'>
+									
 
 
 									<h2>${bet.game.away} vs ${bet.game.home}</h2>

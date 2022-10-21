@@ -46,7 +46,7 @@
                         <div class="Coffee-Title">
 
                             <a href='/dashboard'>
-                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
+                                <h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1>
                             </a>
                         </div>
                         <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
-                            <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+                            <a href='/dashboard'><img class='card-hover' width='150' src="/imgs/coffee_dice_black.png"></a>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
                             <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
@@ -67,7 +67,11 @@
 
 
 
+							<div style='width:530px;margin-left: auto;'>
 
+  							<div class="d-flex justify-content-end"><a style='width:fit-content;' href='/dashboard'><button class='text-center card-hover btn-primary'>Back</button></a></div>
+
+							</div>
                             <div class="betholder"
                                 style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px; margin-left: auto; margin-right:auto;">
                                 <c:forEach var='bet' items='${user.bets}'>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Test</title>
+<title>Login</title>
 <link rel='icon' href='/imgs/coffee_icon.ico'>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
@@ -35,7 +35,7 @@
 <br>
 
 <nav class="text-center" class="navbar navbar-light bg-light">
-  <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+  <a href='/'><h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1></a>
 </nav> <br>
 
 <div class="container d-flex justify-content-evenly mt-3">

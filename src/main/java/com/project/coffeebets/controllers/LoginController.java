@@ -1,5 +1,7 @@
 package com.project.coffeebets.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.project.coffeebets.models.Bet;
 import com.project.coffeebets.models.Game;
 import com.project.coffeebets.models.LoginUser;
 import com.project.coffeebets.models.User;
@@ -130,8 +133,10 @@ public class LoginController {
 	public String statistics(@PathVariable("id") Long id, Model model, HttpSession session){
 		Double winnings = betServ.userProfit(id);
 		Double totalBet = betServ.userTotalBet(id);
+		List<Bet> recentWinnings = betServ.recentWins(id);
 		model.addAttribute("winnings", winnings);
 		model.addAttribute("totalBet", totalBet);
+		model.addAttribute("recentWinnings",recentWinnings);
 		Long user_id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(user_id);
 		model.addAttribute(user);

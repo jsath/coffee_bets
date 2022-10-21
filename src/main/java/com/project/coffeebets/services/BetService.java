@@ -27,6 +27,8 @@ public class BetService {
 	}
 	
 	
+
+	
 	
 	public Double userProfit(Long id) {
 		Double profit = betRepo.userProfit(id);
@@ -56,6 +58,10 @@ public class BetService {
 	
 	public List<Bet> getUserBets(Long Id) {
 		return (List<Bet>) betRepo.getUserBets(Id);
+	}
+	
+	public List<Bet> recentWins(Long Id) {
+		return (List<Bet>) betRepo.recentWins(Id);
 	}
 	
 	public List<Bet> getDashBets() {
