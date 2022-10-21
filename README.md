@@ -75,10 +75,10 @@ About Us!
 
 We're full stack web developers with experience in numerous programming languages. Feel free to contact any of us on Linkedin to learn more about us, or CoffeeBets.  
 
-* [![Jeff][Jeff.com]][Jeff-url]
-* [![Patrick][Pat.com]][Pat-url]
-* [![Sean][Sean.com]][Sean-url]
-* [![Johann][Johann.com]][Johann-url]
+* Frontend/web designer.[![Jeff][Jeff.com]][Jeff-url] 
+* Project Manager/frontend dev.[![Patrick][Pat.com]][Pat-url]
+* Backend dev[![Sean][Sean.com]][Sean-url]
+* Full-Stack dev/devOps[![Johann][Johann.com]][Johann-url]
 
 
 
