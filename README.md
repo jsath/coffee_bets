@@ -52,6 +52,7 @@
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 * [![Javascript][Javascript.com]][Javascript-url]
+* [![HTML/JSP][HTML.com]][HTML-url]
 
 
 <!-- ROADMAP -->
@@ -70,10 +71,16 @@
 <!-- Creators -->
 ## Creators
 
+About Us!
+
+We're full stack web developers with experience in numerous programming languages. Feel free to contact any of us on Linkedin to learn more about us, or CoffeeBets.  
+
 * [![Jeff][Jeff.com]][Jeff-url]
 * [![Patrick][Pat.com]][Pat-url]
 * [![Sean][Sean.com]][Sean-url]
 * [![Johann][Johann.com]][Johann-url]
+
+
 
 
 
@@ -97,6 +104,8 @@
 [MySQL-url]: https://dev.mysql.com/doc/
 [CSS.com]: https://img.shields.io/badge/CSS-blue?logo=css3
 [CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[HTML.com]: https://img.shields.io/badge/-HTML-orange?logo=HTML5
+[HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 
 
 <!--Linkedins-->
