@@ -74,7 +74,7 @@
 							</div>
                             <div class="betholder"
                                 style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px; margin-left: auto; margin-right:auto;">
-                                <c:forEach var='bet' items='${user.bets}'>
+                                <c:forEach var='bet' items='${bets}'>
                                     <div class='card card-hover text-dark shadow-lg'
                                         style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:15px;background-color: #8C92AC;height:200px;">
                                         <c:if test='${bet.team == bet.game.home}'>

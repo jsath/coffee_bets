@@ -27,6 +27,10 @@ public class BetService {
 	}
 	
 	
+	public List<Bet> getAllOrder(Long id){
+		return(List<Bet> ) betRepo.betsOrdered(id);
+		
+	}
 
 	
 	

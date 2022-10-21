@@ -3,7 +3,7 @@ const $ = selector => document.querySelector(selector);
 
 const newsByDate = "https://api.sportsdata.io/v3/nba/scores/json/GamesByDate/";
 
-const key = "key=0f0695cbcd434da582f5688d5897b7fe"
+const key = "key=f6386ba0dce143fe8681fe3ce97be569"
 
 
 const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "Jun",
@@ -60,24 +60,23 @@ async function gameDay(data){
 	content = '';
 	for(var i = 0; i < data.length; i++){
 		content += "<div class='card text-white bg-dark card-hover'style='width:175px;margin-left:auto;margin-right:auto;margin-bottom:25px;align-items:center;'>";
-		if(data[i]["AwayTeamMoneyLine"] != null){
-			content += `<p style='margin-top:25px;' class='text-center'>${data[i]["HomeTeam"]} vs ${data[i]["AwayTeam"]}</p>`;
-			if(data[i]["Status"] == "Scheduled"){
-				content += `<form action="games/addgame/${data[i]["GameID"]}/${data[i]["StadiumID"]}/${data[i]["HomeTeam"]}/${data[i]["AwayTeam"]}" method="post">
+			if(data[i]["Status"] == "Scheduled" && data[i]["AwayTeamMoneyLine"] != null){
+					content += `<p style='margin-top:25px;' class='text-center'>${data[i]["HomeTeam"]} vs ${data[i]["AwayTeam"]}</p>`;
+					content += `<form action="games/addgame/${data[i]["GameID"]}/${data[i]["StadiumID"]}/${data[i]["HomeTeam"]}/${data[i]["AwayTeam"]}" method="post">
     							<button type="submit" class='btn text-center' style='width:150px;'>Bet on Game</button>
-						</form>`	
+								</form>`
 			}else if(data[i]["Status"] == "InProgress"){
 				content += `In Progress`;
 				content += `<p>${data[i]["HomeTeamScore"]} vs ${data[i]["AwayTeamScore"]}</p>`;
 			}else{
-				content += `<p>${data[i]["HomeTeam"]} vs ${data[i]["AwayTeam"]}</p>`;
-		}
-		content += "</div>"
-	}
+			content += `<p>${data[i]["HomeTeam"]} vs ${data[i]["AwayTeam"]}</p>`;
+			}
+			content += "</div>"
 	}
 	document.getElementById("games").innerHTML = content; 
 	return 
 }
+
 
 
 

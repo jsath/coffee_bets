@@ -76,6 +76,9 @@ public class StadiumController {
 	
 	@GetMapping("/all")
 	public String newNinja(@ModelAttribute("stadium") Stadium stadium, Model model, HttpSession session) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Long id = (Long) session.getAttribute("user_id");
 		User user = userServ.getUserById(id);
 		List<Stadium> allStadiums = stadiumServ.allStadiums();

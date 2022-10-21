@@ -47,6 +47,9 @@ public interface BetRepository extends CrudRepository<Bet, Long> {
 	 @Query(value = "SELECT * FROM bets INNER JOIN games ON bets.game_id=games.id where team = games.winner and is_closed = 1 and user_id = ?1 limit 25", nativeQuery=true)
 	 Iterable<Bet> recentWins(@Param("user_id")Long user_id);
 	 
+	 @Query(value = "SELECT * FROM bets where user_id = ?1 order by created_at desc;", nativeQuery=true)
+	 Iterable<Bet> betsOrdered(@Param("user_id")Long user_id);
+	 
 	 
 
 	 

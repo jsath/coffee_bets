@@ -1,78 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-            <%@ page isErrorPage="true" %>
-                            <head>
-                    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-                    <script src="/apiservice/games.js"></script>
-                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-                        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-                        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                        crossorigin="anonymous"></script>
-                    <link rel="stylesheet" href="/css/stylesheet.css">
-                <!DOCTYPE html>
-                <html>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+			<%@ page isErrorPage="true" %>
+
+				<head>
+					<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+					<script src="/apiservice/cashout.js"></script>
+					<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+						integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+						crossorigin="anonymous"></script>
+					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+						crossorigin="anonymous"></script>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+						crossorigin="anonymous"></script>
+					<link rel="stylesheet" href="/css/stylesheet.css">
+					<!DOCTYPE html>
+					<html>
 
 
-                    <meta charset="UTF-8">
-                    <title>Unsettled Bets</title>
-                    <link rel='icon' href='/imgs/coffee_icon.ico'>
+					<meta charset="UTF-8">
+					<title>Unsettled Bets</title>
+					<link rel='icon' href='/imgs/coffee_icon.ico'>
 
-                </head>
+				</head>
 
-                <body>
-
-
-                    <div id='tickerholder'>
-                        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker>
-                        <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-
-                    </div>
-                    <br>
-                    <br>
+				<body>
 
 
-                    <div class="nav">
-                        <div class="nav-title">
+					<div id='tickerholder'>
+						<rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker>
+						<script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
+					</div>
+					<br>
+					<br>
+
+
+					<div class="nav">
+						<div class="nav-title">
 
 
 
-                        </div>
-                        <div class="Coffee-Title">
+						</div>
+						<div class="Coffee-Title">
 
-                            <a href='/dashboard'>
-                                <h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1>
-                            </a>
-                        </div>
-                        <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
+							<a href='/dashboard'>
+								<h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1>
+							</a>
+						</div>
+						<h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 
-                    </div>
-                    <div class="main-body">
-                        <div class="side-bar">
-                            <a href='/dashboard'><img class='card-hover' width='150' src="/imgs/coffee_dice_black.png"></a>
-                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
-                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
-                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
-                            <a style='text-decoration:none;' href='/bets/leaderboard'><button class="btn">Leaderboard</button></a>
-                            <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
-                            <a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button class="btn">Our GitHub</button></a>
-                            <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
-                        </div>
-                        <div class="main-page">
-                        
-                        
+					</div>
+					<div class="main-body">
+						<div class="side-bar">
+							<a href='/dashboard'><img class='card-hover' width='150'
+									src="/imgs/coffee_dice_black.png"></a>
+							<a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
+									Bets</button></a>
+							<a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting
+									History</button></a>
+							<a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User
+									Stats</button></a>
+							<a style='text-decoration:none;' href='/bets/leaderboard'><button
+									class="btn">Leaderboard</button></a>
+							<a style='text-decoration:none;' href='/stadiums/all'><button
+									class="btn">Stadiums</button></a>
+							<a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button
+									class="btn">Our GitHub</button></a>
+							<a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
+						</div>
+						<div class="main-page">
 
 
-							
-							
+
+
+
+
 							<div style='width:530px;margin-left: auto;'>
 
-  									<div class="p-2 justify-content end"><a style='width:fit-content;' href='/dashboard'><button class='text-center card-hover btn-primary'>Back</button></a></div>
+								<div class="p-2 justify-content end"><a style='width:fit-content;'
+										href='/dashboard'><button
+											class='text-center card-hover btn-primary'>Back</button></a></div>
 
 							</div>
 							<c:forEach var='bet' items='${bets}'>
@@ -80,7 +90,7 @@
 
 								<div class="card text-center"
 									style='width:600px;margin-left:auto;margin-right:auto;margin-top:50px;'>
-									
+
 
 
 									<h2>${bet.game.away} vs ${bet.game.home}</h2>
@@ -92,6 +102,9 @@
 									<p>Wager
 										<c:out value='${bet.amount}' />
 									</p>
+									
+									<p>Payout 
+										<c:out value='${bet.payout}'/></p>
 
 									<c:if test='${bet.game.winner == null }'>
 										<h1>Bet In progress</h1>
@@ -108,7 +121,7 @@
 
 											<form action="/bets/close/bet/${bet.id}" method="post">
 												<input type="hidden" name="_method" value="put" />
-												<button class='btn btn-success'>Claim $${bet.payout}</button>
+												<button class='btn-success'>Claim $${bet.payout}</button>
 											</form>
 
 										</c:if>
@@ -120,10 +133,12 @@
 
 											<form action="/bets/close/bet/${bet.id}" method="post">
 												<input type="hidden" name="_method" value="put" />
-												<button class='btn btn-warning'>Close ticket</button>
+												<button class='btn-warning'>Close ticket</button>
 											</form>
+		
 
 										</c:if>
+
 
 
 									</c:if>
@@ -131,7 +146,7 @@
 									<c:if test='${bet.game.winner == null}'>
 
 
-										<button class='btn btn-secondary' onclick='payDay(${bet.apiId})'>Check
+										<button style="width:120px;margin-left:auto; margin-right:auto;" class='btn-secondary text-center' onclick='payDay(${bet.apiId})'>Check
 											Status</button>
 
 
@@ -161,7 +176,7 @@
 											</div>
 
 											<button id='verifying' type="submit" value="Verify Data"
-												class="btn btn-primary">Verify Data</button>
+												class="btn-primary">Verify Data</button>
 										</form:form>
 
 										<p>If game is over, and you can't claim/close ticket, please check status
@@ -173,7 +188,7 @@
 
 							</c:forEach>
 
-			
+
 
 
 

@@ -4,7 +4,7 @@
 const $ = selector => document.querySelector(selector); 
 
 const newsByDate = "https://api.sportsdata.io/v3/nba/stats/json/BoxScore/";
-const key = "key=0f0695cbcd434da582f5688d5897b7fe";
+const key = "key=f6386ba0dce143fe8681fe3ce97be569";
 
 
 

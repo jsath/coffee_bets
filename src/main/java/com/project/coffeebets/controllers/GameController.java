@@ -103,6 +103,9 @@ public class GameController {
 	
 	@GetMapping("/edit/{id}")
 	public String viewEdit(@PathVariable("id") Long id, Model model, HttpSession session) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Game game = gameServ.getOne(id);
 		if(session.getAttribute("user_id") == null) {
 			return "redirect:/";
@@ -114,7 +117,6 @@ public class GameController {
 	
 	@PutMapping("/edit/{id}")
 	public String edit(@Valid @ModelAttribute("game") Game game, BindingResult result, HttpSession session) {
-		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()) {
 			return "/bets/activebets.jsp";
 		}

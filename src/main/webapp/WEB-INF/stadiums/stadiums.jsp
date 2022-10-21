@@ -25,7 +25,7 @@
 					</style>
 
                     <meta charset="UTF-8">
-                    <title>My Bets</title>
+                    <title>Stadiums</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
 
                 </head>
@@ -74,12 +74,13 @@
 
 							</div>
                         
-                        <div class='stadiumholder'>
+                        
+                        <div class='stadiumholder' style='display:flex;flex-direction:row;'>
                         	
         						<c:forEach var="stadium" items="${stadiums}">
-        						<div class='card bg-dark card-hover'>
-        							<a href="/stadiums/view/${stadium.id}"><img class='stadiumimg' src="${stadium.imgFileName}"/>
-        							<c:out value="${stadium.stadiumName}"></c:out></a>
+        						<div class='card bg-dark card-hover text-center' style='width:500px;padding:15px;'>
+        							<a style='text-decoration:none;' href="/stadiums/view/${stadium.id}"><img class='stadiumimg' src="${stadium.imgFileName}"/>
+        							<p><c:out value="${stadium.stadiumName}"></c:out></p></a>
         							</div>
         						</c:forEach>
 

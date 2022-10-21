@@ -44,7 +44,7 @@ public void setStatus(int status) {
 private Long apiId; 
  
  @NotEmpty(message="Team is required!")
- @Size(min=3, max=128, message="Team must be between 3 and 128 characters")
+ @Size(min=2, max=128, message="Team must be between 3 and 128 characters")
  private String Team;
  
  

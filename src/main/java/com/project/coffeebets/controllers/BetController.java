@@ -47,6 +47,9 @@ public class BetController {
 	
 	@GetMapping("/leaderboard")
 	public String leaderboard(HttpSession session, Model model) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		
 		Long id = (Long) session.getAttribute("user_id");
 		model.addAttribute(userServ.getUserById(id));
@@ -65,6 +68,9 @@ public class BetController {
 	
 	@GetMapping("/addbet/{id}")
 	public String add(@ModelAttribute("bet") Bet bet, @PathVariable("id") Long id, Model model, HttpSession session) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Game game = gameServ.getGameByApiId(id);
 		model.addAttribute("id", id);
 		model.addAttribute(game);
@@ -82,6 +88,7 @@ public class BetController {
 	
 	@PostMapping("/addbet")
 	public String add(@Valid @ModelAttribute("bet") Bet bet, BindingResult result, HttpSession session) {
+		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()) {
 			return "redirect:/bets/addbet/" + session.getAttribute("gameId");
 		}else {
@@ -97,6 +104,9 @@ public class BetController {
 	
 	@GetMapping("/activebets")
 	public String activeBets(@ModelAttribute("game") Game game, HttpSession session, Model model) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Long user_id = (Long) (session.getAttribute("user_id"));
 		User user = userServ.getUserById(user_id);
 		Wallet wallet = walletServ.getWalletByUserId(user_id);
@@ -110,9 +120,14 @@ public class BetController {
 
 	@GetMapping("/mybets")
 	public String allBets(HttpSession session, Model model) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Long user_id = (Long) (session.getAttribute("user_id"));
 		User user = userServ.getUserById(user_id);
 		model.addAttribute(user);
+		List<Bet> bets = betServ.getAllOrder(user_id);
+		model.addAttribute("bets",bets);
 		return "bets/mybets.jsp";
 	}
 	// Get All
