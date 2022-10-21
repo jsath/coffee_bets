@@ -7,45 +7,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
 
-	<body>
-    <div class="main-box">
-        <div id='tickerholder'>
-            <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Dashboard</title>
+                    <link rel='icon' href='/imgs/coffee_icon.ico'>
+                </head>
+                <body>
 
-</div>
-    <div class="nav">
-    	<div class="nav-title">
-    <!-- <img src="/imgs/coffee_black_logo.png"> -->
-    </div>
-    <div class="Coffee-Title">
-    	<h1> Coffee Bets</h1>
-    </div>
-    <h1> </h1>
-    </div>
-    <div class="main-body">
-        <div class="side-bar">
-            <a href='/dashboard'><img  width='150' src="/imgs/coffee_dice_black.png"></a>
-            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
-            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your Bets</button></a>
-            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
-            <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
-            <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
 
-        </div>
-        <div class="main-page">>
-       	<h1><c:out value="${stadium.stadiumName}"></c:out></h1>
-       	<img src="${stadium.imgFileName}"/>
-       	<p><c:out value="${stadium.location}"></c:out></p><br>
-       	<p><c:out value="${stadium.capacity}"></c:out></p><br>
-       	<p><c:out value="${stadium.teamName}"></c:out></p><br>
-       	<p><c:out value="${stadium.games}"></c:out></p><br>
-       	
-       	
+                    <div id='tickerholder'>
+                        <rssapp-ticker id="Xx5P2L2o3BBM2Iw7"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="nav">
+                        <div class="nav-title">
+
+
+
+                        </div>
+                        <div class="Coffee-Title">
+
+                            <a href='/dashboard'>
+                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
+                            </a>
+                        </div>
+                        <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
+
+                    </div>
+                    <div class="main-body">
+                        <div class="side-bar">
+                            <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
+                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
+                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
+                            <a style='text-decoration:none;' href='/bets/leaderboard'><button class="btn">Leaderboard</button></a>
+                            <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
+                            <a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button class="btn">Our GitHub</button></a>
+                            <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
+                        </div>
+        <div class="main-page text-center">
+       	<h1 class="text-center"><c:out value="${stadium.stadiumName}"></c:out></h1>
+       	<img class="" src="${stadium.imgFileName}"/>     	
+
         </div>
      </div>
      </body>

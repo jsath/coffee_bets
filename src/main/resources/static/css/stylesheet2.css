@@ -34,10 +34,18 @@ h1{
     margin: 10px;
 }
 
+
+.blahblah{
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
 .card-hover:hover{
 	box-shadow: F89917;
     transform:scale(1.15);
 }
+
 
 
 
