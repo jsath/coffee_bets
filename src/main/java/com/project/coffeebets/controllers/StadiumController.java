@@ -60,11 +60,15 @@ public class StadiumController {
 	
 	@GetMapping("/view/{id}")
 	public String view(@PathVariable("id") Long id, Model model, HttpSession session) {
-//		if(session.getAttribute("user_id") == null) {
-//			return "redirect:/";
-//		}
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
+		Long user_id = (Long) session.getAttribute("user_id");
+		User user = userServ.getUserById(user_id);
+	
 		Stadium stadium = stadiumServ.getOne(id);
 		model.addAttribute("stadium", stadium);
+		model.addAttribute(user);
 		return "/stadiums/stadium.jsp"; 
 	}
 	
