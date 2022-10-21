@@ -4,7 +4,6 @@
             <%@ page isErrorPage="true" %>
                             <head>
                     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-                    <script src="/apiservice/ticker.js"></script>
                     <script src="/apiservice/games.js"></script>
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -56,18 +55,13 @@
                     <div class="main-body">
                         <div class="side-bar">
                             <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
-                            <button class="btn">Scores</button>
-                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active
-                                    Bets</button></a>
-                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Your
-                                    Bets</button></a>
-                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User
-                                    Stats</button></a>
-                            <a style='text-decoration:none;' href='/bets/leaderboard'><button
-                                    class="btn">Leaderboard</button></a>
+                            <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
+                            <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
+                            <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
+                            <a style='text-decoration:none;' href='/bets/leaderboard'><button class="btn">Leaderboard</button></a>
+                            <a style='text-decoration:none;' href='/stadiums/all'><button class="btn">Stadiums</button></a>
+                            <a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button class="btn">Our GitHub</button></a>
                             <a style='text-decoration:none;' href='/logout'><button class="btn">Logout</button></a>
-
-
                         </div>
                         <div class="main-page">
 
