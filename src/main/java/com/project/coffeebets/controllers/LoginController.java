@@ -131,6 +131,9 @@ public class LoginController {
 	
 	@GetMapping("user/stats/{id}")
 	public String statistics(@PathVariable("id") Long id, Model model, HttpSession session){
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		}
 		Double winnings = betServ.userProfit(id);
 		Double totalBet = betServ.userTotalBet(id);
 		List<Bet> recentWinnings = betServ.recentWins(id);

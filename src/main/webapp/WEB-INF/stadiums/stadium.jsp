@@ -51,7 +51,7 @@
                         </div>
         <div class="main-page text-center">
        	<h1 class="text-center"><c:out value="${stadium.stadiumName}"></c:out></h1>
-       	<img class="" src="${stadium.imgFileName}"/>     	
+       	<img style="width:1000px;" src="${stadium.imgFileName}"/>     	
 
         </div>
      </div>
