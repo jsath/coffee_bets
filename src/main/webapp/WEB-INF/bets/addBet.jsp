@@ -82,6 +82,7 @@
                                 <form:input path='apiId' type='hidden' value='${id}'></form:input>
                                 <form:input path='game' type='hidden' value='${game.id}'></form:input>
                                 <form:input path="user" type="hidden" value="${user_id}" />
+                                
 
 
                                 <form:label path="amount">Amount: </form:label><br>

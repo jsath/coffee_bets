@@ -88,6 +88,7 @@ public class BetController {
 	
 	@PostMapping("/addbet")
 	public String add(@Valid @ModelAttribute("bet") Bet bet, BindingResult result, HttpSession session) {
+		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()) {
 			return "redirect:/bets/addbet/" + session.getAttribute("gameId");
 		}else {
