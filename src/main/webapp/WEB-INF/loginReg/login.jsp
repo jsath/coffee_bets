@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Test</title>
+<title>Login</title>
 <link rel='icon' href='/imgs/coffee_icon.ico'>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
@@ -35,7 +35,7 @@
 <br>
 
 <nav class="text-center" class="navbar navbar-light bg-light">
-  <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+  <a href='/'><h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1></a>
 </nav> <br>
 
 <div class="container d-flex justify-content-evenly mt-3">
@@ -49,7 +49,7 @@
   <div class="form-outline mb-4">
     <form:input path="email" type="email" id="form2Example1" class="form-control" />
     <form:label  path="email" class="form-label" for="form2Example1">Email address</form:label>
-    <form:errors path="email" class="text-danger" style='font-size:40px;'/>
+    <form:errors path="email" class="text-danger" style='font-size:15px;'/>
   </div>
 
   <!-- Password input -->
@@ -58,7 +58,7 @@
     <form:input path="password" type="password" id="form2Example2" class="form-control"/>
 
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
-    <form:errors path="password" class="text-danger" style='font-size:40px;'/>
+    <form:errors path="password" class="text-danger" style='font-size:15px;'/>
   </div>
 
   <!-- 2 column grid layout for inline styling -->

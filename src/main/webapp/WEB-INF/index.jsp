@@ -28,14 +28,14 @@
                                 <!-- <img src="/imgs/coffee_black_logo.png"> -->
                             </div>
                             <div class="Coffee-Title">
-                                <h1><img width='400' src='/imgs/bets_clear.png'></h1>
+                                <h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1>
 
                             </div>
                             <h1> </h1>
                         </div>
                         <div class="main-body">
                             <div class="side-bar">
-                                <img width='150' src="/imgs/coffee_dice_black.png">
+                                <img class='card-hover' width='150' src="/imgs/coffee_dice_black.png">
                                 <a style='text-decoration:none;' href='https://github.com/jsath/coffee_bets'><button class="btn">Our GitHub</button></a>
                                 <a href="/register" style="text-decoration:none;"><button class="btn">Create Account</button></a>
                                 <a href="/login" style="text-decoration:none;"><button class="btn">Log In</button></a>

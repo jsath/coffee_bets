@@ -42,14 +42,14 @@
                         </div>
                         <div class="Coffee-Title">
            
-                           <a href='/dashboard'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+                           <a href='/dashboard'><h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1></a>
                         </div>
                         <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 						
                     </div>
                     <div class="main-body">
                         <div class="side-bar">
-                            <a href='/dashboard'><img width='150' src="/imgs/coffee_dice_black.png"></a>
+                            <a href='/dashboard'><img class='card-hover' width='150' src="/imgs/coffee_dice_black.png"></a>
                             <a style='text-decoration:none;' href='/bets/activebets'><button class="btn">Active Bets</button></a>
                             <a style='text-decoration:none;' href='/bets/mybets'><button class="btn">Betting History</button></a>
                             <a style='text-decoration:none;' href='/user/stats/${user.id}'><button class="btn">User Stats</button></a>
@@ -60,31 +60,37 @@
                         </div>
                         <div class="main-page">
                         
+                        							<div style='width:530px;margin-left: auto;'>
+
+  									<div class="p-2 justify-content end"><a style='width:fit-content;' href='/dashboard'><button class='text-center card-hover btn-primary'>Back</button></a></div>
+
+							</div>
                         
-                        <div class='card text-center' style='width:200px;margin-left: auto; margin-right:auto;'>
+                        
+                        <div class='card text-center' style='width:350px;margin-left: auto; margin-right:auto;display:flex;flex-direction:column;flex-wrap:wrap;'>
                         
                         <h2><strong>Summary</strong></h2>
                         
-                        <p>Total Money won:<strong class='text-success'>$<c:out value='${winnings}'/></strong> </p>
-                        <p>Total Money wagered: $<c:out value='${totalBet}'/></p>
+                        <p>Total Beans won:<strong class='text-success'>$<c:out value='${winnings}'/></strong> </p>
+                        <p>Total Beans wagered: $<c:out value='${totalBet}'/></p>
                         <p>Current Balance: $<c:out value='${user.wallet.coffeebeans}'/></p>
                         </div>
-             	           
-             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;margin-top:25px;'>
+             	           <h1 class='text-center'>Your Recent Wins</h1>
+             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;margin-top:2px;'>
                         
                         <thead>
                         <tr>
                         <th>Wager</th>
-                        <th>Outcome</th>
+                        <th>Winnings</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var='bet' items='${user.bets}'>
-                        	<tr>
+                        <c:forEach var='bet' items='${recentWinnings}'>
+                        	<tr class='card-hover'>
                         	<c:if test='${bet.team == bet.game.winner}'>
+                        	<td><c:out value='${bet.amount}'/></td>
                         	<td><c:out value='+${bet.payout}'/></td>
-                        	<td><c:out value='${bet.user.userName}'/></td>
                         	</c:if>
                        		</tr>
                         </c:forEach>

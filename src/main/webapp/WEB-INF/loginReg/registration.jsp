@@ -16,7 +16,7 @@
 </head>
 	<body>
 	<nav class="text-center" class="navbar navbar-light bg-light">
-    <a href='/'><h1><img width='400' src='/imgs/bets_clear.png'></h1></a>
+    <a href='/'><h1><img class='card-hover' width='400' src='/imgs/bets_clear.png'></h1></a>
 </nav> <br>
 
 <section class="vh-100" ><!-- style="background-color: #eee;"> -->
@@ -69,8 +69,10 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" value="Register" class="btn btn-primary btn-lg">Create</button>
+                    <button type="submit" value="Register" class="btn btn-primary btn-lg">Create Account</button>
+                   
                   </div>
+                  <a href='/login'>Login</a>
 
                 </form:form>
 

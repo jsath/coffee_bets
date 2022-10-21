@@ -106,6 +106,7 @@
                                 <input type="submit" value="Add Bet" />
 
                             </form:form>
+                            <a style='text-decoration:none; margin-top:15px;' href='/dashboard'><button class='text-center'>Back</button></a>
                             
                             </div>
                           

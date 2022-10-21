@@ -29,9 +29,9 @@ public class Bet {
  
 
 @NotNull(message="Amount must not be null")
- private Integer amount;
+ private Double amount;
  
- private Integer payout; 
+ private Double payout; 
  
  private int status = 0;
 
@@ -67,10 +67,10 @@ private Long apiId;
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
-	public void setAmount(Integer amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 	public String getTeam() {
@@ -114,10 +114,10 @@ private Long apiId;
 	  protected void onUpdate() {
 	    this.updatedAt = new Date();
 	 }
-	public Integer getPayout() {
+	public Double getPayout() {
 		return payout;
 	}
-	public void setPayout(Integer payout) {
+	public void setPayout(Double payout) {
 		this.payout = payout;
 	}
 	public Long getApiId() {
