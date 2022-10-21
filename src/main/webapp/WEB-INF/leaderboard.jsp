@@ -19,7 +19,7 @@
 
                 <head>
                     <meta charset="UTF-8">
-                    <title>Dashboard</title>
+                    <title>Leaderboard</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
                 </head>
                 <body>

@@ -25,7 +25,7 @@
 					</style>
 
                     <meta charset="UTF-8">
-                    <title>My Bets</title>
+                    <title>Stadiums</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
 
                 </head>
