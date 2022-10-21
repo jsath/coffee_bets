@@ -72,7 +72,7 @@
                                 style="display:flex;flex-direction:row;width:80%;flex-wrap:wrap;gap:25px; margin-left: auto; margin-right:auto;">
                                 <c:forEach var='bet' items='${user.bets}'>
                                     <div class='card card-hover text-dark shadow-lg'
-                                        style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:25px;background-color: #8C92AC;height:195px;">
+                                        style="width:200px;margin-left:auto;margin-right:auto;margin-bottom:15px;background-color: #8C92AC;height:200px;">
                                         <c:if test='${bet.team == bet.game.home}'>
                                             <p class='text-center'>
                                                 <c:out value='${bet.game.away}' /> vs <strong>
@@ -88,8 +88,7 @@
                                             </p>
                                         </c:if>
 
-                                        <div
-                                            style='display:flex; flex-direction:row;justify-content:space-between;padding:15px;'>
+                                        <div style='display:flex; flex-direction:row;justify-content:space-between;padding:4px;'>
                                             <p class='text-center'><strong>Stake</strong><br>
                                                 <c:out value='${bet.amount}' />
                                             </p>
@@ -101,19 +100,22 @@
 
                                         </div>
                                         <c:if test='${bet.game.isClosed == 1 }'>
+                                        
+                                        
 
 
                                             <c:if test='${bet.team == bet.game.winner }'>
+                                            
+                                            	<p class='text-center' style='color:#006400;'><strong><c:out value='${bet.game.winner}'/></strong></p>
 
-                                                <p class='text-center' style='color:#006400;'><br><strong>+</strong>
-                                                    <c:out value='${bet.payout}' />
-                                                </p>
+                                                <p class='text-center' style='color:#006400;'>+<c:out value='${bet.payout}' /></p>
                                             </c:if>
 
                                             <c:if test='${bet.team != bet.game.winner }'>
-                                                <p class='text-center text-danger'><br><strong>-
-                                                        <c:out value='${bet.amount}' />
-                                                    </strong></p>
+                                            
+                                            	<p class='text-center text-danger'><strong><c:out value='${bet.team}'/></strong><p>
+                                                <p class='text-center text-danger'>-<c:out value='${bet.amount}'/></p>
+                                                        
                                             </c:if>
 
                                         </c:if>
@@ -122,6 +124,7 @@
                                         <c:if test='${bet.game.isClosed == 0 }'>
                                             <p class='text-center'>Unsettled</p>
                                         </c:if>
+                                        
                                     </div>
 
                                 </c:forEach>

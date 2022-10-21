@@ -49,7 +49,7 @@
   <div class="form-outline mb-4">
     <form:input path="email" type="email" id="form2Example1" class="form-control" />
     <form:label  path="email" class="form-label" for="form2Example1">Email address</form:label>
-    <form:errors path="email" class="text-danger" style='font-size:40px;'/>
+    <form:errors path="email" class="text-danger" style='font-size:15px;'/>
   </div>
 
   <!-- Password input -->
@@ -58,7 +58,7 @@
     <form:input path="password" type="password" id="form2Example2" class="form-control"/>
 
     <form:label path="password"  class="form-label" for="form2Example2">Password</form:label>
-    <form:errors path="password" class="text-danger" style='font-size:40px;'/>
+    <form:errors path="password" class="text-danger" style='font-size:15px;'/>
   </div>
 
   <!-- 2 column grid layout for inline styling -->

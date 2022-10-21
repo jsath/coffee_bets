@@ -54,8 +54,8 @@ public class BetController {
 		List <User> users = userServ.leaderboard();
 		model.addAttribute("users", users);
 		
-		Integer winnings = betServ.TotalProfit();
-		Integer wagered = betServ.TotalBet();
+		Double winnings = betServ.TotalProfit();
+		Double wagered = betServ.TotalBet();
 		model.addAttribute("winnings", winnings);
 		model.addAttribute("wagered",wagered);
 		return "leaderboard.jsp";

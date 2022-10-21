@@ -27,10 +27,10 @@ public class Wallet {
     private Long id;
     
     @NotNull(message="Usd are required!")
-    private int usd=0;
+    private Double usd=0.0;
     
     @NotNull(message="Coffee Beans are required!")
-    private int coffeebeans=10000;
+    private Double coffeebeans=10000.00;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -52,19 +52,19 @@ public class Wallet {
 		this.id = id;
 	}
 
-	public int getUsd() {
+	public Double getUsd() {
 		return usd;
 	}
 
-	public void setUsd(int usd) {
+	public void setUsd(Double usd) {
 		this.usd = usd;
 	}
 
-	public int getCoffeebeans() {
+	public Double getCoffeebeans() {
 		return coffeebeans;
 	}
 
-	public void setCoffeebeans(int coffeebeans) {
+	public void setCoffeebeans(Double coffeebeans) {
 		this.coffeebeans = coffeebeans;
 	}
 

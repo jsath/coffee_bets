@@ -61,7 +61,7 @@
                         <div class="main-page">
                         
                         
-                        <div class='card text-center' style='width:200px;margin-left: auto; margin-right:auto;'>
+                        <div class='card text-center' style='width:350px;margin-left: auto; margin-right:auto;display:flex;flex-direction:column;flex-wrap:wrap;'>
                         
                         <h2><strong>Summary</strong></h2>
                         
@@ -69,22 +69,22 @@
                         <p>Total Money wagered: $<c:out value='${totalBet}'/></p>
                         <p>Current Balance: $<c:out value='${user.wallet.coffeebeans}'/></p>
                         </div>
-             	           
-             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;margin-top:25px;'>
+             	           <h1 class='text-center'>Your Wins</h1>
+             		 <table class='table table-dark text-center' style='width:350px; margin-left: auto; margin-right:auto;margin-top:2px;'>
                         
                         <thead>
                         <tr>
                         <th>Wager</th>
-                        <th>Outcome</th>
+                        <th>Winnings</th>
 
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach var='bet' items='${user.bets}'>
-                        	<tr>
+                        	<tr class='card-hover'>
                         	<c:if test='${bet.team == bet.game.winner}'>
+                        	<td><c:out value='${bet.amount}'/></td>
                         	<td><c:out value='+${bet.payout}'/></td>
-                        	<td><c:out value='${bet.user.userName}'/></td>
                         	</c:if>
                        		</tr>
                         </c:forEach>

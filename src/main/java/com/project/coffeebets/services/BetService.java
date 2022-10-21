@@ -28,24 +28,24 @@ public class BetService {
 	
 	
 	
-	public Integer userProfit(Long id) {
-		Integer profit = betRepo.userProfit(id);
+	public Double userProfit(Long id) {
+		Double profit = betRepo.userProfit(id);
 		return profit; 
 	}
 	
 	
-	public Integer userTotalBet(Long id) {
-		Integer userBet = betRepo.userTotalBet(id);
+	public Double userTotalBet(Long id) {
+		Double userBet = betRepo.userTotalBet(id);
 		return userBet; 
 	}
 	
-	public Integer TotalBet() {
-		Integer totalBet = betRepo.totalBet();
+	public Double TotalBet() {
+		Double totalBet = betRepo.totalBet();
 		return totalBet; 
 	}
 	
-	public Integer TotalProfit() {
-		Integer totalProfit = betRepo.totalProfit();
+	public Double TotalProfit() {
+		Double totalProfit = betRepo.totalProfit();
 		return totalProfit; 
 	}
 	

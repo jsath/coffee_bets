@@ -128,8 +128,8 @@ public class LoginController {
 	
 	@GetMapping("user/stats/{id}")
 	public String statistics(@PathVariable("id") Long id, Model model, HttpSession session){
-		Integer winnings = betServ.userProfit(id);
-		Integer totalBet = betServ.userTotalBet(id);
+		Double winnings = betServ.userProfit(id);
+		Double totalBet = betServ.userTotalBet(id);
 		model.addAttribute("winnings", winnings);
 		model.addAttribute("totalBet", totalBet);
 		Long user_id = (Long) session.getAttribute("user_id");

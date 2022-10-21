@@ -6,12 +6,6 @@ target/
 !**/src/main/**/apiservice/
 
 
-src/main/resources/static/apiservice/ticker.js
-src/main/resources/static/apiservice/games.js
-src/main/resources/static/apiservice/bet.js
-src/main/resources/static/apiservice/testing.js
-src/main/resources/static/apiservice/cashout.js
-
 
 
 ### STS ###

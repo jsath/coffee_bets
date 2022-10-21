@@ -85,7 +85,7 @@
                         </thead>
                         <tbody>
                         <c:forEach var='bet' items='${recentBets}'>
-                        	<tr>
+                        	<tr class='card-hover'>
                         	
                         	<td>$<c:out value='${bet.payout}'/></td>
                         	<td><c:out value='${bet.user.userName}'/></td>

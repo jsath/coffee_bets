@@ -215,6 +215,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
 }
 
-
+#dateInput:hover{
+	box-shadow: F89917;
+    transform:scale(1.15);
+}
 
 
