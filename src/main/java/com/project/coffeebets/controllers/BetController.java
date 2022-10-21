@@ -72,6 +72,10 @@ public class BetController {
 		Long user_id = (Long) session.getAttribute("user_id");
 		Wallet wallet = walletServ.getWalletByUserId(user_id);
 		model.addAttribute(wallet);
+		
+		User user = userServ.getUserById(user_id);
+		model.addAttribute(user);
+		
 		return "/bets/addBet.jsp";
 	}
 	

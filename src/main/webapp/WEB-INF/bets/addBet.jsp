@@ -19,7 +19,7 @@
 
                 <head>
                     <meta charset="UTF-8">
-                    <title>Add Bet</title>
+                    <title>Bet</title>
                     <link rel='icon' href='/imgs/coffee_icon.ico'>
 
                 </head>
@@ -47,7 +47,7 @@
                                 <h1><img width='400' src='/imgs/bets_clear.png'></h1>
                             </a>
                         </div>
-                        <h4 class='text-center text-warning'>${user.wallet.coffeebeans}</h4>
+                        <h4 class='text-center text-warning'>Balance: ${user.wallet.coffeebeans}</h4>
 
                     </div>
                     <div class="main-body">
@@ -64,17 +64,17 @@
                         <div class="main-page">
 
 
-                            <h1>Add Bet</h1>
 
-                            <h2>Your Balance: $${wallet.coffeebeans}</h2>
-
-                            <div id="gamedetails">
+                            <div id="gamedetails" class='card text-center bg-dark text-white' style='width:300px;margin-left:auto;margin-right:auto;'>
 
                                 <!-- Dynamically rendered with api -->
+                                
+                                
+                                </div>
 
-                            </div>
+                           
 
-
+							<div class='card text-center bg-dark text-white' style='width:300px;margin-left:auto;margin-right:auto;margin-top:30px;'>
 
 
                             <form:form action="/bets/addbet" method="post" modelAttribute="bet">
@@ -106,6 +106,9 @@
                                 <input type="submit" value="Add Bet" />
 
                             </form:form>
+                            
+                            </div>
+                          
 
                         </div>
                         <div style='position:fixed;bottom:0;'>
