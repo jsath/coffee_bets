@@ -10,7 +10,7 @@
   <p align="center">
     Full stack basketball sports betting application
     <br />
-    <a href="https://github.com/jsath/coffee_bets"><strong>Explore the docs »</strong></a>
+    <a href="http://coffeebets.com/"><strong>Go to Site »</strong></a>
   </p>
 </div>
 
