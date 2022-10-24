@@ -77,7 +77,7 @@ We're full stack web developers with experience in numerous programming language
 
 * Frontend/web designer[![Jeff][Jeff.com]][Jeff-url] 
 * Project Manager/frontend dev[![Patrick][Pat.com]][Pat-url]
-* Backend dev[![Sean][Sean.com]][Sean-url]
+* Backend dev/devOps[![Sean][Sean.com]][Sean-url]
 * Full-Stack dev/devOps[![Johann][Johann.com]][Johann-url]
 
 
