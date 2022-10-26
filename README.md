@@ -63,6 +63,7 @@
 - [ ] P2P transactions
 - [ ] Multi Sport Betting
 - [ ] Fantasy Sports
+- [ ] Crypto Integration
 
 
 
