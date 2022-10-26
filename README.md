@@ -45,14 +45,14 @@
 
 ### Built With
 
-* [![Java][Java.com]][Java-url]
-* [![CSS][CSS.com]][CSS-url]
-* [![SpringBoot][SpringBoot.com]][SpringBoot-url]
-* [![MySQL][MySQL.com]][MySQL-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-* [![Javascript][Javascript.com]][Javascript-url]
-* [![HTML/JSP][HTML.com]][HTML-url]
+[![Java][Java.com]][Java-url]
+[![CSS][CSS.com]][CSS-url]
+[![SpringBoot][SpringBoot.com]][SpringBoot-url]
+[![MySQL][MySQL.com]][MySQL-url]
+[![Bootstrap][Bootstrap.com]][Bootstrap-url]
+[![JQuery][JQuery.com]][JQuery-url]
+[![Javascript][Javascript.com]][Javascript-url]
+[![HTML/JSP][HTML.com]][HTML-url]
 
 
 <!-- ROADMAP -->
