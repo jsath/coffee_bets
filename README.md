@@ -10,11 +10,10 @@
   <p align="center">
     Full stack basketball sports betting application
     <br />
-    <a href="http://coffeebets.com/"><strong>Go to Site »</strong></a>
+    <a href="http://coffeebets.com target="_blank" rel="noopener noreferrer"/"><strong>Go to Site »</strong></a><br/>
+    <a href="#images"><strong>Preview site images »</strong></a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -28,10 +27,9 @@
       </ul>
     </li>
     <li><a href="#creators">Creators</a></li>
+    <li><a href='#images'>Images</a></li>
   </ol>
 </details>
-
-
 
 ## About The Project
 
@@ -80,6 +78,11 @@ We're full stack web developers with experience in numerous programming language
 * Project Manager/frontend dev[![Patrick][Pat.com]][Pat-url]
 * Backend dev/devOps[![Sean][Sean.com]][Sean-url]
 * Full-Stack dev/devOps[![Johann][Johann.com]][Johann-url]
+
+
+### Images
+![Home](home-bets.png)
+![Home](dash-bets.png)
 
 
 
